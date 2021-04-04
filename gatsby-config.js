@@ -1,32 +1,46 @@
 module.exports = {
   siteMetadata: {
-    title: "Pandrush",
+    title: 'Pandrush',
   },
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-image',
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-anchor-links',
       options: {
-        trackingId: "",
+        offset: -100,
+        duration: 300,
       },
     },
-    "gatsby-plugin-react-helmet",
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        icon: "src/images/icon.png",
+        trackingId: 'adsfasdfaefaew',
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-react-helmet',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "images",
-        path: "./src/images/",
+        icon: 'src/images/icon.png',
       },
-      __key: "images",
+    },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/',
+      },
+      __key: 'images',
     },
   ],
 };
