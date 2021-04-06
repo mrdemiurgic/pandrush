@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 import colors from '../../content/colors.json';
-interface ContainerProps {
-  show: boolean;
-}
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div`
   position: fixed;
-  z-index: 10;
-  top: 0;
+  z-index: 100000000000000;
+  top: -80px;
+  height: 80px;
   background: ${colors.richBlack}66;
-  backdrop-filter: blur(10px);
-  transform: translateY(${({ show }) => (show ? 0 : -80)}px);
-  padding: 10px 0;
-  transition: 0.3s transform;
+  padding: 20px 0;
+  will-change: top;
+  transition: 0.2s transform;
   width: 100%;
+`;
+
+export const CreateOrderContainer = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 `;

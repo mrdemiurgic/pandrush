@@ -1,7 +1,6 @@
 import React from 'react';
 
 import navItems from '../../content/nav.json';
-const numItems = navItems.length;
 
 import { Container, Item } from './styles';
 
@@ -9,7 +8,7 @@ export interface Props {
   /**
    * Include a link for going back to top of page on index
    */
-  includeHome: boolean;
+  includeHome?: boolean;
 }
 
 const Nav = ({ includeHome = false }: Props) => {

@@ -1,12 +1,10 @@
 import styled from 'styled-components';
-import logo from '../../images/icon.png';
 import colors from '../../content/colors.json';
 
 export const Container = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden;
 `;
 
 export const FadeBackground = styled.div`
@@ -52,7 +50,7 @@ export const FadeBox = styled.div`
   background: #00000044;
   border-radius: 10px;
   padding: 10px;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
 `;
 
 export const Slash = styled.span`

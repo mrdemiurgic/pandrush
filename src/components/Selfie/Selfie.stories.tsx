@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Package from './index';
+import Selfie from './index';
 
 export default {
-  title: 'Components/Package',
-  component: Package,
+  title: 'Components/Selfie',
+  component: Selfie,
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -13,6 +13,6 @@ export default {
   },
 };
 
-const Template = (args) => <Package {...args} />;
+const Template = (args) => <Selfie {...args} />;
 
 export const Default = Template.bind({});

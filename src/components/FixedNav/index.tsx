@@ -1,19 +1,20 @@
 import React from 'react';
 import Nav from '../Nav';
+import CreateOrder from '../CreateOrder';
 
-import { Container } from './styles';
+import { Container, CreateOrderContainer } from './styles';
 
 interface Props {
-  /**
-   * Whether if the Fixed Nav component should be visible on top of viewport. It will be moved out of viewport when set to false.
-   */
-  show: boolean;
+  navRef?: React.RefObject<HTMLDivElement> | null;
 }
 
-const FixedNav = ({ show }: Props) => {
+const FixedNav = ({ navRef = null }: Props) => {
   return (
-    <Container show={show}>
+    <Container ref={navRef}>
       <Nav includeHome={true} />
+      <CreateOrderContainer>
+        <CreateOrder />
+      </CreateOrderContainer>
     </Container>
   );
 };

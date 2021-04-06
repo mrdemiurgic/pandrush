@@ -3,12 +3,20 @@ module.exports = {
     title: 'Pandrush',
   },
   plugins: [
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-ts-checker',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-anchor-links',
       options: {
-        offset: -100,
+        offset: -80,
         duration: 300,
       },
     },

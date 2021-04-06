@@ -1,14 +1,18 @@
 import React from 'react';
-import Layout from '../src/components/Layout';
+import { TypographyStyle, GoogleFont } from 'react-typography';
 import { action } from '@storybook/addon-actions';
 
-// export const decorators = [
-//   (Story) => (
-//     <Layout>
-//       <Story />
-//     </Layout>
-//   ),
-// ];
+import typography from '../src/utils/typography';
+
+export const decorators = [
+  (Story) => (
+    <>
+      <TypographyStyle typography={typography} />
+      <GoogleFont typography={typography} />
+      <Story />
+    </>
+  ),
+];
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

@@ -5,10 +5,12 @@ export const Container = styled.div`
   width: 100%;
   z-index: 1;
   height: 100%;
+  overflow: hidden;
 `;
 
 export const Video = styled.video`
   position: absolute;
+  pointer-events: none;
   top: 0;
   left: 0;
   @media screen and (min-aspect-ratio: 16/9) {

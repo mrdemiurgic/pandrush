@@ -7,6 +7,6 @@ export default {
   component: RecentWork,
 };
 
-const Template = (args) => <RecentWork {...args} />;
+const Template = () => <RecentWork />;
 
 export const Default = Template.bind({});
