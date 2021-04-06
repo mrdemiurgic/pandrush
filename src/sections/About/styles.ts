@@ -8,7 +8,9 @@ export const Container = styled.div`
   font-family: Montserrat;
 `;
 
-export const ContentContainer = styled.div``;
+export const ContentContainer = styled.div`
+  margin-left: 460px;
+`;
 
 export const SelfieContainer = styled.div`
   float: left;
@@ -33,8 +35,19 @@ export const Slash = styled.span`
 `;
 
 export const Who = styled.div`
-  padding: 30px 30px 0 0;
+  padding: 20px 30px 0 0;
   line-height: 1.33;
+  font-weight: 0.9em;
 `;
 
-export const How = styled.div``;
+export const HowBanner = styled.div`
+  font-family: Oswald;
+  font-size: 2em;
+  font-weight: 400;
+  padding: 20px 30px 0 0;
+`;
+
+export const How = styled.div`
+  padding: 20px 30px 30px 0;
+  line-height: 1.33;
+`;

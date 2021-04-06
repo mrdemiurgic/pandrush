@@ -6,6 +6,7 @@ import {
   Name,
   Who,
   How,
+  HowBanner,
   SelfieContainer,
   Position,
   Slash,
@@ -27,6 +28,7 @@ const About = () => {
         </Position>
         <Who>{about.who}</Who>
         <Who>{about.what}</Who>
+        <HowBanner>Interested? Let's get started!</HowBanner>
         <How>{about.how}</How>
       </ContentContainer>
     </Container>
