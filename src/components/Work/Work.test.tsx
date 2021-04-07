@@ -2,7 +2,7 @@ import React from 'react';
 
 import Work from './index';
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
 jest.mock('react-youtube', () => {
@@ -41,4 +41,24 @@ test('Work click event shows youtube video', async () => {
   const thumbnail = screen.getByRole('button');
   user.click(thumbnail);
   expect(await screen.findByText(/i am a fucking video/i)).toBeInTheDocument();
+});
+
+test('Work blur event hides youtube video', async () => {
+  render(
+    <Work
+      kind="Musical"
+      youtubeId="4mkeIhQCmj8"
+      description="blah blah blah blah"
+    />,
+  );
+
+  const thumbnail = screen.getByRole('button');
+  user.click(thumbnail);
+  expect(await screen.findByText(/i am a fucking video/i)).toBeInTheDocument();
+
+  thumbnail.blur();
+
+  await waitFor(() => {
+    expect(screen.queryByText(/i am a fucking video/i)).not.toBeInTheDocument();
+  });
 });

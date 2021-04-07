@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  border-radius: 400px;
-  width: 400px;
-  height: 400px;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 `;
 
-export const Img = styled.img``;
+export const Img = styled.img`
+  border-radius: 100%;
+`;

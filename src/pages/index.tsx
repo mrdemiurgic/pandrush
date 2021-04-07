@@ -2,7 +2,9 @@ import React, { useLayoutEffect, useRef } from 'react';
 
 import Home from '../sections/Home';
 import About from '../sections/About';
+import Contact from '../sections/Contact';
 import RecentWork from '../sections/RecentWork';
+import Pricing from '../sections/Pricing';
 import Layout from '../components/Layout';
 import FixedNav from '../components/FixedNav';
 
@@ -63,6 +65,8 @@ const Index = () => {
       <Home />
       <RecentWork />
       <About />
+      <Pricing />
+      <Contact />
     </Layout>
   );
 };

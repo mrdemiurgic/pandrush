@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import colors from '../../content/colors.json';
 
 export const Container = styled.div`
-  background: ${colors.babyBlue};
+  background: ${colors.richBlack};
   margin: auto;
 `;
 
@@ -20,10 +20,15 @@ export const WorksContainer = styled.div``;
 
 export const WorkContainer = styled.div`
   width: 50%;
-  background: pink;
   padding: 0;
   margin: 0;
   vertical-align: middle;
   display: inline-block;
   box-sizing: border-box;
+  @media only screen and (min-width: 1850px) {
+    width: 33.33333%;
+  }
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;

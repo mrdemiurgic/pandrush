@@ -5,19 +5,31 @@ import YouTube from 'react-youtube';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  padding: 10px;
+`;
 
 export const ThumbnailContainer = styled.div`
   width: 100%;
   position: relative;
   user-select: none;
   outline: none;
+  box-shadow: 0 0 3px ${colors.babyPowder}33;
+  border: 1px solid ${colors.sonicSilver}66;
   border-radius: 10px;
+  overflow: hidden;
 `;
 
 interface VideoProps {
   show: boolean;
 }
+
+export const LoaderContainer = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 export const Video = styled(YouTube)<VideoProps>`
   width: 100%;
@@ -66,7 +78,7 @@ export const KindText = styled.div`
   top: 30px;
   font-family: Oswald;
   text-transform: uppercase;
-  font-size: 3.5em;
+  font-size: 2.5em;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -78,8 +90,8 @@ export const DescriptionText = styled.div`
   position: absolute;
   color: ${colors.babyPowder};
   text-align: center;
-  font-weight: 200;
+  font-weight: 300;
   width: 100%;
   bottom: 30px;
-  font-size: 1.4em;
+  font-size: 1em;
 `;

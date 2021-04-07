@@ -36,6 +36,9 @@ export const PandrushText = styled(Text)`
   font-weight: 900;
   font-family: 'Oswald';
   margin-bottom: 7px;
+  @media only screen and (min-width: 1350px) {
+    font-size: 7em;
+  }
 `;
 
 export const FilmmakerText = styled(Text)`

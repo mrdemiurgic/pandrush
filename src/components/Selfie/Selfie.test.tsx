@@ -10,10 +10,12 @@ test('Selfie smokescreen test', () => {
   expect(screen.getByAltText(/pavlo/i)).toBeInTheDocument();
   expect(container).toMatchInlineSnapshot(`
     .c0 {
-      border-radius: 400px;
-      width: 400px;
-      height: 400px;
-      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+
+    .c1 {
+      border-radius: 100%;
     }
 
     <div>
@@ -22,7 +24,7 @@ test('Selfie smokescreen test', () => {
       >
         <img
           alt="Pavlo Andrushchak"
-          class=""
+          class="c1"
           src="test-file-stub"
         />
       </div>

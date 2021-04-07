@@ -11,13 +11,8 @@ const RecentWork = () => {
     <Container id="work">
       <WorksContainer>
         {recentWorks.map(({ kind, youtubeId, description }) => (
-          <WorkContainer>
-            <Work
-              key={youtubeId}
-              youtubeId={youtubeId}
-              kind={kind}
-              description={description}
-            />
+          <WorkContainer key={youtubeId}>
+            <Work youtubeId={youtubeId} kind={kind} description={description} />
           </WorkContainer>
         ))}
       </WorksContainer>

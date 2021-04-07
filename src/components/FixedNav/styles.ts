@@ -6,7 +6,7 @@ export const Container = styled.div`
   z-index: 100000000000000;
   top: -80px;
   height: 80px;
-  background: ${colors.richBlack}66;
+  background: ${colors.richBlack}aa;
   padding: 20px 0;
   will-change: top;
   transition: 0.2s transform;

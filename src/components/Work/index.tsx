@@ -9,11 +9,15 @@ import {
   ThumbnailOverlay,
   Icon,
   Video,
+  LoaderContainer,
 } from './styles';
 
 import { Options } from 'react-youtube';
 import { getThumbnailUrl } from '../../utils/youtube';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import ClipLoader from 'react-spinners/ClipLoader';
+
+import colors from '../../content/colors.json';
 
 export interface Props {
   /**
@@ -42,56 +46,58 @@ const youtubeOpts: Options = {
 const Work = ({ kind, youtubeId, description }: Props) => {
   const [showVideo, setShowVideo] = useState<boolean>(false);
   const [mountVideo, setMountVideo] = useState<boolean>(false);
-
-  const playerTarget = useRef<any>();
+  const [showLoader, setShowLoader] = useState<boolean>(false);
 
   const onClick = () => {
     setMountVideo(true);
-    if (playerTarget.current !== undefined) {
-      setShowVideo(true);
-      playerTarget.current.playVideo();
-    }
+    setShowLoader(true);
   };
 
   const onBlur = (e: React.FocusEvent<HTMLDivElement>) => {
+    setShowLoader(false);
     setShowVideo(false);
-    if (playerTarget.current !== undefined) {
-      playerTarget.current.pauseVideo();
-    }
 
     setTimeout(() => {
       setMountVideo(false);
     }, 300);
   };
 
-  const onReady = (e: { target: any }) => {
+  const onPlay = (e: { target: any }) => {
     setShowVideo(true);
-    playerTarget.current = e.target;
   };
 
   return (
-    <ThumbnailContainer
-      role="button"
-      tabIndex={0}
-      onKeyPress={onClick}
-      onClick={onClick}
-      onBlur={onBlur}
-    >
-      {mountVideo && (
-        <Video
-          opts={youtubeOpts}
-          videoId={youtubeId}
-          show={showVideo}
-          onReady={onReady}
-        />
-      )}
-      <ThumbnailOverlay>
-        <KindText role="banner">{kind}</KindText>
-        <DescriptionText>{description}</DescriptionText>
-        <Icon icon={faPlay} />
-      </ThumbnailOverlay>
-      <Thumbnail alt="thumbnail" src={getThumbnailUrl(youtubeId)} />
-    </ThumbnailContainer>
+    <Container>
+      <ThumbnailContainer
+        role="button"
+        key={youtubeId}
+        tabIndex={0}
+        onKeyPress={onClick}
+        onClick={onClick}
+        onBlur={onBlur}
+      >
+        {mountVideo && (
+          <Video
+            opts={youtubeOpts}
+            videoId={youtubeId}
+            show={showVideo}
+            onPlay={onPlay}
+          />
+        )}
+        <ThumbnailOverlay>
+          <KindText role="banner">{kind}</KindText>
+          <DescriptionText>{description}</DescriptionText>
+          {showLoader ? (
+            <LoaderContainer>
+              <ClipLoader color={colors.babyPowder} size={100} />
+            </LoaderContainer>
+          ) : (
+            <Icon icon={faPlay} />
+          )}
+        </ThumbnailOverlay>
+        <Thumbnail alt="thumbnail" src={getThumbnailUrl(youtubeId)} />
+      </ThumbnailContainer>
+    </Container>
   );
 };
 
