@@ -8,8 +8,6 @@ export const Container = styled.div`
   height: 80px;
   background: ${colors.richBlack}aa;
   padding: 20px 0;
-  will-change: top;
-  transition: 0.2s transform;
   width: 100%;
 `;
 

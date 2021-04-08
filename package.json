@@ -13,8 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test:watch": "jest --watchAll",
-    "test": "jest",
+    "test:watch": "jest --colors --watchAll",
+    "test": "jest --colors",
     "lint": "eslint src/**/*.{ts,tsx}",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

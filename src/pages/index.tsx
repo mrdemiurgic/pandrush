@@ -44,10 +44,8 @@ const Index = () => {
           fixedNavRef.current !== null
         ) {
           const scrollY = window.scrollY;
-          const showNav = scrollY >= windowHeight.current - 80;
-          fixedNavRef.current.style.transform = `translateY(${
-            showNav ? 80 : 0
-          }px)`;
+          const newY = clamp(scrollY - windowHeight.current + 160, 0, 80);
+          fixedNavRef.current.style.transform = `translateY(${newY}px)`;
         }
       });
     };
@@ -63,8 +61,8 @@ const Index = () => {
     <Layout>
       <FixedNav navRef={fixedNavRef} />
       <Home />
-      <RecentWork />
       <About />
+      <RecentWork />
       <Pricing />
       <Contact />
     </Layout>
