@@ -1,14 +1,13 @@
 import React from 'react';
-
 import { Button, Icon } from './styles';
 
-import { faVideo } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
 const CreateOrder = () => {
   return (
-    <Button to="/order">
-      <Icon icon={faVideo} />
-      Create Order
+    <Button href="#book">
+      <Icon icon={faCalendarAlt} />
+      Book Now
     </Button>
   );
 };

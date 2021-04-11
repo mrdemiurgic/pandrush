@@ -1,5 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import colors from '../../content/colors.json';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const downwards = keyframes`
+from {
+  transform: translate(-50%, 0px);
+}
+
+to {
+  transform: translate(-50%, 30px);
+}
+`;
 
 export const Container = styled.div`
   width: 100%;
@@ -64,4 +75,26 @@ export const CreateOrderContainer = styled.div`
   width: 100%;
   margin-top: 40px;
   text-align: center;
+`;
+
+export const ScrollingIndicator = styled(FontAwesomeIcon)`
+  position: absolute;
+  color: ${colors.babyPowder};
+  bottom: 50px;
+  left: 50%;
+  animation-name: ${downwards};
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.2s;
+
+  transform: translateX(-50%);
+  font-size: 3em;
+  z-index: 10;
+`;
+
+export const SocialMediaContainer = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* background: ${colors.richBlack}66; */
 `;

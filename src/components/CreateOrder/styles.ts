@@ -4,9 +4,7 @@ import colors from '../../content/colors.json';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Link } from 'gatsby';
-
-export const Button = styled(Link)`
+export const Button = styled.a`
   background: ${colors.babyBlue};
   color: ${colors.richBlack};
   font-family: Montserrat;
@@ -20,12 +18,12 @@ export const Button = styled(Link)`
   border: 0;
   text-decoration: none;
   border-radius: 5px;
-  transition: 0.2s transform;
+  transition: 0.2s background;
   &:hover {
-    transform: scale(1.05);
+    background: ${colors.babyBlue2};
   }
   &:active {
-    transform: scale(1);
+    background: ${colors.babyBlue3};
   }
 `;
 

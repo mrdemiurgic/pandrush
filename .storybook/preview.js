@@ -2,6 +2,8 @@ import React from 'react';
 import { TypographyStyle, GoogleFont } from 'react-typography';
 import { action } from '@storybook/addon-actions';
 
+import colors from '../src/content/colors.json';
+
 import typography from '../src/utils/typography';
 
 export const decorators = [
@@ -22,6 +24,27 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  backgrounds: {
+    default: 'richBlack',
+    values: [
+      {
+        name: 'richBlack',
+        value: colors.richBlack,
+      },
+      {
+        name: 'sonicSilver',
+        value: colors.sonicSilver,
+      },
+      {
+        name: 'babyPowder',
+        value: colors.babyPowder,
+      },
+      {
+        name: 'babyBlue',
+        value: colors.babyBlue,
+      },
+    ],
   },
 };
 

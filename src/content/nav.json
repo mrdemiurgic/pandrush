@@ -1,18 +1,14 @@
 [
   {
-    "label": "Recent Work",
-    "link": "/#work"
-  },
-  {
     "label": "About Me",
-    "link": "/#about"
+    "hash": "about"
   },
   {
-    "label": "Pricing",
-    "link": "/#pricing"
+    "label": "Recent Work",
+    "hash": "work"
   },
   {
-    "label": "Get in touch",
-    "link": "/#contact"
+    "label": "Book",
+    "hash": "book"
   }
 ]

@@ -2,6 +2,8 @@ import React from 'react';
 import Nav from '../../components/Nav';
 import VideoBackground from '../../components/VideoBackground';
 import CreateOrder from '../../components/CreateOrder';
+import SocialMedia from '../../components/SocialMedia';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import {
   Container,
   Content,
@@ -11,25 +13,38 @@ import {
   Slash,
   FadeBackground,
   CreateOrderContainer,
+  ScrollingIndicator,
+  SocialMediaContainer,
 } from './styles';
+
+import colors from '../../content/colors.json';
 
 const Home = () => {
   return (
     <Container id="home">
       <VideoBackground />
       <FadeBackground>
+        <SocialMediaContainer>
+          <SocialMedia />
+        </SocialMediaContainer>
         <Content>
           <PandrushText>Pandrush</PandrushText>
           <FilmmakerText>
             Filmmaker<Slash>/</Slash>Videographer
           </FilmmakerText>
           <FadeBox>
-            <Nav />
+            <Nav
+              textColor={colors.babyPowder}
+              textHoverColor={colors.babyBlue}
+              separatorColor={colors.babyBlue}
+            />
           </FadeBox>
           <CreateOrderContainer>
             <CreateOrder />
           </CreateOrderContainer>
         </Content>
+
+        <ScrollingIndicator icon={faArrowDown} />
       </FadeBackground>
     </Container>
   );

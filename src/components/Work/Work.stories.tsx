@@ -2,7 +2,7 @@ import React from 'react';
 
 import Work, { Props } from './index';
 
-import { Story } from '@storybook/react';
+import { Story, Meta } from '@storybook/react';
 
 export default {
   title: 'Components/Work',
@@ -21,7 +21,7 @@ export default {
       </div>
     ),
   ],
-};
+} as Meta;
 
 const Template = (args: Props) => <Work {...args} />;
 

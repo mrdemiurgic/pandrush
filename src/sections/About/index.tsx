@@ -9,9 +9,12 @@ import {
   How,
   HowBanner,
   SelfieContainer,
+  NameContainer,
   Position,
   Slash,
   Icon,
+  Column,
+  CenterContainer,
 } from './styles';
 import Selfie from '../../components/Selfie';
 
@@ -26,18 +29,26 @@ const About = () => {
         <SelfieContainer>
           <Selfie />
         </SelfieContainer>
+        <CenterContainer>
+          <NameContainer>
+            <Name>Pavlo Andrushchak</Name>
+            <Position>
+              <Icon icon={faFilm} />
+              Filmmaker
+              <Slash />
+              Videographer
+            </Position>
+          </NameContainer>
+        </CenterContainer>
         <ContentContainer>
-          <Name>Pavlo Andrushchak</Name>
-          <Position>
-            <Icon icon={faFilm} />
-            Filmmaker
-            <Slash />
-            Videographer
-          </Position>
-          <Who>{about.who}</Who>
-          <Who>{about.what}</Who>
-          <HowBanner>Interested? Let's get started!</HowBanner>
-          <How>{about.how}</How>
+          <Column>
+            <Who>{about.who}</Who>
+            <Who>{about.what}</Who>
+          </Column>
+          <Column>
+            <HowBanner>Interested? Let's get started!</HowBanner>
+            <How>{about.how}</How>
+          </Column>
         </ContentContainer>
       </InnerContainer>
     </Container>

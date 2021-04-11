@@ -6,7 +6,7 @@ export const Container = styled.div`
   z-index: 100000000000000;
   top: -80px;
   height: 80px;
-  background: ${colors.richBlack}aa;
+  background: ${colors.babyBlue}ee;
   padding: 20px 0;
   width: 100%;
 `;

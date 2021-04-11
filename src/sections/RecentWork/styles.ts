@@ -1,9 +1,21 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import colors from '../../content/colors.json';
 
 export const Container = styled.div`
-  background: ${colors.richBlack};
+  background: ${colors.sonicSilver4};
+  &:before {
+    display: block;
+    content: '';
+    margin-top: -80px;
+    height: 80px;
+    background: ${colors.richBlack};
+  }
+`;
+
+export const InnerContainer = styled.div`
   margin: auto;
+  width: 1200px;
 `;
 
 export const Banner = styled.div`
@@ -25,10 +37,39 @@ export const WorkContainer = styled.div`
   vertical-align: middle;
   display: inline-block;
   box-sizing: border-box;
-  @media only screen and (min-width: 1850px) {
+  /* @media only screen and (min-width: 1850px) {
     width: 33.33333%;
-  }
+  } */
   @media only screen and (max-width: 800px) {
     width: 100%;
   }
+`;
+
+export const SeeMoreContainer = styled.div`
+  text-align: center;
+  margin-bottom: 10px;
+`;
+
+export const SeeMore = styled.a`
+  display: inline-block;
+  padding: 10px 50px;
+  background: ${colors.babyBlue};
+  border-radius: 10px;
+  font-family: Oswald;
+  font-weight: 300;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s background;
+  color: ${colors.richBlack};
+  &:hover {
+    background: ${colors.babyBlue2};
+  }
+`;
+
+export const YoutubeIcon = styled(FontAwesomeIcon)`
+  margin-right: 10px;
+  font-size: 1.5em;
+  display: inline-block;
+  vertical-align: text-top;
 `;

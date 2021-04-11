@@ -1,0 +1,84 @@
+{
+  "packages": [
+    {
+      "name": "Wedding",
+      "price": 2000,
+      "description": "Not a single moment will be missed on your special day!",
+      "features": [
+        "2 Videographers",
+        "8 hours of filming",
+        "5-10 mins of professionally edited video",
+        "1-2 mins of video for social media use"
+      ],
+      "options": [
+        {
+          "name": "Extra hours",
+          "price": 150,
+          "type": "hourly"
+        },
+        {
+          "name": "1 Photographer",
+          "price": 500,
+          "type": "once"
+        },
+        {
+          "name": "Drone footage",
+          "price": 200,
+          "type": "once"
+        }
+      ]
+    },
+    {
+      "name": "Movie/TV Show",
+      "price": 1500,
+      "description": "We will bring your dream movie to reality!",
+      "features": [
+        "1 Videographer",
+        "4 hours of filming",
+        "Edited film of agreed upon length",
+        "1-2 mins of trailer"
+      ],
+      "options": [
+        {
+          "name": "Extra hours",
+          "price": 100,
+          "type": "hourly"
+        },
+        {
+          "name": "Extra Videographer",
+          "price": 500,
+          "type": "once"
+        }
+      ]
+    },
+    {
+      "name": "General",
+      "price": 1000,
+      "description": "For events, vlogging, tradeshows, etc",
+      "features": [
+        "1 Videographer",
+        "4 hours of filming",
+        "5-10 mins of professionally edited video",
+        "1-2 mins of trailer"
+      ],
+      "options": [
+        {
+          "name": "Extra hours",
+          "price": 100,
+          "type": "hourly"
+        },
+        {
+          "name": "Extra Videographer",
+          "price": 500,
+          "type": "once"
+        }
+      ]
+    }
+  ],
+  "featuresInAll": [
+    "4k high quality footage",
+    "Professional editing and effects",
+    "Licensed background music",
+    "Raw unedited video footage"
+  ]
+}

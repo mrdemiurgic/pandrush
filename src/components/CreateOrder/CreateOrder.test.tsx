@@ -22,21 +22,16 @@ test('CreateOrder smokescreen test', () => {
       -webkit-text-decoration: none;
       text-decoration: none;
       border-radius: 5px;
-      -webkit-transition: 0.2s -webkit-transform;
-      -webkit-transition: 0.2s transform;
-      transition: 0.2s transform;
+      -webkit-transition: 0.2s background;
+      transition: 0.2s background;
     }
 
     .c0:hover {
-      -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-      transform: scale(1.05);
+      background: #AFE5FA;
     }
 
     .c0:active {
-      -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-      transform: scale(1);
+      background: #6CCFF6;
     }
 
     .c1 {

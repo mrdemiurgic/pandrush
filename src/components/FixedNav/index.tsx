@@ -2,6 +2,8 @@ import React from 'react';
 import Nav from '../Nav';
 import CreateOrder from '../CreateOrder';
 
+import colors from '../../content/colors.json';
+
 import { Container, CreateOrderContainer } from './styles';
 
 interface Props {
@@ -11,10 +13,15 @@ interface Props {
 const FixedNav = ({ navRef = null }: Props) => {
   return (
     <Container ref={navRef}>
-      <Nav includeHome={true} />
-      <CreateOrderContainer>
+      <Nav
+        includeHome={true}
+        textColor={colors.richBlack}
+        separatorColor={colors.babyPowder}
+        textHoverColor={colors.babyPowder}
+      />
+      {/* <CreateOrderContainer>
         <CreateOrder />
-      </CreateOrderContainer>
+      </CreateOrderContainer> */}
     </Container>
   );
 };

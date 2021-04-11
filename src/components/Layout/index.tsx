@@ -4,6 +4,15 @@ import colors from '../../content/colors.json';
 
 import { createGlobalStyle } from 'styled-components';
 
+if (typeof window !== 'undefined') {
+  // eslint-disable-next-line global-require
+  require('smooth-scroll')('a[href*="#"]', {
+    speed: 300,
+    speedAsDuration: true,
+    easing: 'easeInOutCubic',
+  });
+}
+
 interface Props {
   children: React.ReactNode;
 }
@@ -23,6 +32,13 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     background: ${colors.richBlack};
     color: ${colors.babyPowder};
+  }
+
+  :target:before {
+    content: "";
+    display: block;
+    height: 100px;
+    margin: -100px 0 0;
   }
 `;
 
