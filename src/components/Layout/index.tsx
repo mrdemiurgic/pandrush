@@ -5,7 +5,6 @@ import colors from '../../content/colors.json';
 import { createGlobalStyle } from 'styled-components';
 
 if (typeof window !== 'undefined') {
-  // eslint-disable-next-line global-require
   require('smooth-scroll')('a[href*="#"]', {
     speed: 300,
     speedAsDuration: true,

@@ -8,6 +8,10 @@ import socialMedia from '../../content/socialMedia.json';
 
 import { Container, Icon, IconContainer, Link } from './styles';
 
+interface Props {
+  includeEmail?: boolean;
+}
+
 type IconDeclaration = {
   [key: string]: IconDefinition;
 };
@@ -18,16 +22,25 @@ const icon: IconDeclaration = {
   facebook: faFacebook,
 };
 
-const SocialMedia = () => {
+const SocialMedia = ({ includeEmail = true }: Props) => {
   return (
     <Container>
-      {socialMedia.map(({ type, url, color }) => (
-        <Link href={url} target="_blank" rel="noreferrer" color={color}>
-          <IconContainer>
-            <Icon icon={icon[type]} />
-          </IconContainer>
-        </Link>
-      ))}
+      {socialMedia
+        .filter(({ type }) => (includeEmail ? true : type !== 'email'))
+        .map(({ type, url, color, hoverColor }) => (
+          <Link
+            key={url}
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            color={color}
+            hoverColor={hoverColor}
+          >
+            <IconContainer>
+              <Icon icon={icon[type]} />
+            </IconContainer>
+          </Link>
+        ))}
     </Container>
   );
 };

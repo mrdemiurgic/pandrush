@@ -3,3 +3,4 @@ coverage/
 .cache/
 public
 yarn-error.log
+.vercel

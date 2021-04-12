@@ -9,6 +9,7 @@ export const Container = styled.div`
 
 interface Props {
   color: string;
+  hoverColor: string;
 }
 
 export const Link = styled.a<Props>`
@@ -22,7 +23,7 @@ export const Link = styled.a<Props>`
     margin-right: 0;
   }
   &:hover {
-    color: ${({ color }) => `${color}aa`};
+    color: ${({ hoverColor }) => hoverColor};
   }
   &:active {
     color: ${({ color }) => color};

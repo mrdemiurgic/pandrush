@@ -1,24 +1,55 @@
 import React from 'react';
 
-import Social from '../../components/Social';
+import SocialMedia from '../../components/SocialMedia';
 
-import contact from '../../content/contact.json';
+import ContactForm from '../../components/ContactForm';
 
-import { Container, Banner, Description, InnerContainer } from './styles';
+import { faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
+
+import {
+  Container,
+  Banner,
+  Description,
+  InnerContainer,
+  Column,
+  ContactPoints,
+  ContactPoint,
+  ContactIcon,
+  ContactText,
+  ContactIconContainer,
+  ContactFormContainer,
+} from './styles';
 
 const Contact = () => {
   return (
     <Container id="contact">
       <InnerContainer>
-        <Banner>Get in touch</Banner>
-        <Description>
-          Please don't hesitate to reach out to me for any reason! If you have a
-          film project in mind, I can help bring it to reality!
-        </Description>
+        <Column>
+          <ContactPoints>
+            <ContactPoint>
+              <ContactIconContainer>
+                <ContactIcon icon={faEnvelope} />
+              </ContactIconContainer>
+              <ContactText>
+                <a href="mailto:pandrushllc@gmail.com">{`pandrushllc@gmail.com`}</a>
+              </ContactText>
+            </ContactPoint>
+            <ContactPoint>
+              <ContactIconContainer>
+                <ContactIcon icon={faMobileAlt} />
+              </ContactIconContainer>
 
-        {contact.map(({ type, url, text, color }) => (
-          <Social key={type} type={type} url={url} text={text} color={color} />
-        ))}
+              <ContactText>(123) 456-7890</ContactText>
+            </ContactPoint>
+          </ContactPoints>
+
+          <SocialMedia includeEmail={false} />
+        </Column>
+        <Column>
+          <ContactFormContainer>
+            <ContactForm />
+          </ContactFormContainer>
+        </Column>
       </InnerContainer>
     </Container>
   );
