@@ -24,9 +24,6 @@ const Home = () => {
     <Container id="home">
       <VideoBackground />
       <FadeBackground>
-        <SocialMediaContainer>
-          <SocialMedia />
-        </SocialMediaContainer>
         <Content>
           <PandrushText>Pandrush</PandrushText>
           <FilmmakerText>
@@ -39,6 +36,10 @@ const Home = () => {
               separatorColor={colors.babyBlue}
             />
           </FadeBox>
+          <SocialMediaContainer>
+            <SocialMedia />
+          </SocialMediaContainer>
+
           <CreateOrderContainer>
             <CreateOrder />
           </CreateOrderContainer>

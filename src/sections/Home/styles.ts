@@ -44,6 +44,7 @@ const Text = styled.div`
 
 export const PandrushText = styled(Text)`
   font-size: 5.5em;
+  line-height: 1;
   font-weight: 900;
   font-family: 'Oswald';
   margin-bottom: 7px;
@@ -93,8 +94,7 @@ export const ScrollingIndicator = styled(FontAwesomeIcon)`
 `;
 
 export const SocialMediaContainer = styled.div`
-  position: absolute;
-  top: 10px;
-  right: 10px;
   /* background: ${colors.richBlack}66; */
+  margin: auto;
+  text-align: center;
 `;
