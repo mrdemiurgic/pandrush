@@ -4,12 +4,14 @@ import colors from '../../content/colors.json';
 
 export const Container = styled.div`
   background: ${colors.sonicSilver4};
+  padding: 50px 0;
+
   &:before {
     display: block;
     content: '';
     margin-top: -80px;
     height: 80px;
-    background: ${colors.richBlack};
+    /* background: ${colors.richBlack}; */
   }
 `;
 

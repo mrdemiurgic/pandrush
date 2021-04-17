@@ -7,13 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export const Container = styled.div`
   background: ${colors.richBlack};
   color: ${colors.babyPowder};
+  padding: 50px 0;
   font-family: Montserrat;
   &:before {
     display: block;
     content: '';
+    position: relative;
     margin-top: -80px;
     height: 80px;
-    visibility: hidden;
   }
 `;
 

@@ -6,12 +6,13 @@ import colors from '../../content/colors.json';
 export const Container = styled.div`
   background: ${colors.sonicSilver1};
   color: ${colors.richBlack};
+  padding: 50px 0;
+
   &:before {
     display: block;
     content: '';
     margin-top: -80px;
     height: 80px;
-    background: ${colors.sonicSilver4};
   }
 `;
 
@@ -27,6 +28,12 @@ export const Banner = styled.div`
 `;
 
 export const PackagesContainer = styled.div``;
+
+export const PackageContainer = styled.div`
+  display: inline-block;
+  width: 33.33333%;
+  padding: 10px;
+`;
 
 export const QuoteInfo = styled.div`
   display: inline-block;

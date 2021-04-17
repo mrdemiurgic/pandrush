@@ -5,11 +5,11 @@ interface Result {
   url: string | false;
 }
 
-const sendEmail: Promise<Result> = (
+const sendEmail = (
   name: string,
   email: string,
   message: string,
-) => {
+): Promise<Result> => {
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
       host: 'smtp.ethereal.email',

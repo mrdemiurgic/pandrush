@@ -30,6 +30,7 @@ import {
   SelectContainer,
   SelectButton,
   CalendarIcon,
+  Overlay,
 } from './styles';
 
 export interface Option {
@@ -105,6 +106,8 @@ const Package = ({
     createSelectedOptions(options.length),
   );
 
+  const [showOverlay, setShowOverlay] = useState<boolean>(true);
+
   const total = calculateTotal(price, options, selectedOptions);
 
   const onClick = (index: number) => {
@@ -119,8 +122,14 @@ const Package = ({
     setSelectedOptions(newOptions);
   };
 
+  const onSubmit = () => {
+    setShowOverlay((state) => !state);
+  };
+
   return (
     <Container>
+      {/* <Overlay show={showOverlay}>Heyyyy</Overlay> */}
+
       <Card>
         <Banner>{name}</Banner>
         <Description>{description}</Description>
@@ -178,7 +187,7 @@ const Package = ({
           <TotalPrice key={total}>${total}</TotalPrice>
         </TotalBox>
         <SelectContainer>
-          <SelectButton>
+          <SelectButton onClick={onSubmit}>
             <CalendarIcon icon={faCalendarAlt} />
             Book a date
           </SelectButton>

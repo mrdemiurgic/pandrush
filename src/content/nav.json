@@ -8,7 +8,11 @@
     "hash": "work"
   },
   {
-    "label": "Book",
+    "label": "Book a date",
     "hash": "book"
+  },
+  {
+    "label": "Contact me",
+    "hash": "contact"
   }
 ]

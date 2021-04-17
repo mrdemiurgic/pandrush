@@ -16,6 +16,7 @@ import {
   ContactPoint,
   ContactIcon,
   ContactText,
+  ContactLink,
   ContactIconContainer,
   ContactFormContainer,
 } from './styles';
@@ -31,7 +32,7 @@ const Contact = () => {
                 <ContactIcon icon={faEnvelope} />
               </ContactIconContainer>
               <ContactText>
-                <a href="mailto:pandrushllc@gmail.com">{`pandrushllc@gmail.com`}</a>
+                <ContactLink href="mailto:pandrushllc@gmail.com">{`pandrushllc@gmail.com`}</ContactLink>
               </ContactText>
             </ContactPoint>
             <ContactPoint>
@@ -39,7 +40,11 @@ const Contact = () => {
                 <ContactIcon icon={faMobileAlt} />
               </ContactIconContainer>
 
-              <ContactText>(123) 456-7890</ContactText>
+              <ContactText>
+                <ContactLink href="tel:(123) 456-7890">
+                  (123) 456-7890
+                </ContactLink>
+              </ContactText>
             </ContactPoint>
           </ContactPoints>
 

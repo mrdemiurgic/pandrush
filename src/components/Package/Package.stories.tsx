@@ -12,7 +12,7 @@ export default {
   title: 'Components/Package',
   component: Package,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
     backgrounds: {
       default: 'sonicSilver',
     },
@@ -21,7 +21,7 @@ export default {
     (Story) => (
       <div
         style={{
-          textAlign: 'center',
+          width: 500,
         }}
       >
         <Story />

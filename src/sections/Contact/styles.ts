@@ -6,6 +6,7 @@ import colors from '../../content/colors.json';
 export const Container = styled.div`
   background: ${colors.babyPowder};
   width: 100%;
+  padding: 50px 0;
   color: ${colors.richBlack};
 `;
 
@@ -50,7 +51,13 @@ export const ContactPoint = styled.div`
   margin-bottom: 10px;
 `;
 
-export const ContactLink = styled.a``;
+export const ContactLink = styled.a`
+  color: ${colors.sonicSilver4};
+  transition: 0.3s color;
+  &:hover {
+    color: ${colors.sonicSilver2};
+  }
+`;
 
 export const ContactIconContainer = styled.div`
   background: ${colors.babyBlue};
@@ -66,7 +73,6 @@ export const ContactIconContainer = styled.div`
 export const ContactIcon = styled(FontAwesomeIcon)`
   font-size: 1.5em;
   line-height: 50px;
-
   vertical-align: middle;
 `;
 

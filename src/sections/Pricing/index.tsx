@@ -11,6 +11,7 @@ import {
   IncludedFeaturesBanner,
   Feature,
   FeatureIcon,
+  PackageContainer,
 } from './styles';
 
 import { packages, featuresInAll } from '../../content/offerings.json';
@@ -24,13 +25,15 @@ const Pricing = () => {
       <InnerContainer>
         <PackagesContainer>
           {packages.map(({ name, description, options, features, price }) => (
-            <Package
-              name={name}
-              description={description}
-              options={options as Option[]}
-              features={features}
-              price={price}
-            />
+            <PackageContainer>
+              <Package
+                name={name}
+                description={description}
+                options={options as Option[]}
+                features={features}
+                price={price}
+              />
+            </PackageContainer>
           ))}
         </PackagesContainer>
         <QuoteInfo>

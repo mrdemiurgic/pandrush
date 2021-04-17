@@ -11,7 +11,8 @@ import {
   YoutubeIcon,
 } from './styles';
 
-import Work from '../../components/Work';
+import Examples from '../../components/Examples';
+// import Work from '../../components/Work';
 
 import recentWorks from '../../content/recentWorks.json';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -21,15 +22,16 @@ const RecentWork = () => {
     <Container id="work">
       <InnerContainer>
         <WorksContainer>
-          {recentWorks.map(({ kind, youtubeId, description }) => (
-            <WorkContainer key={youtubeId}>
-              <Work
+          <Examples>
+            {recentWorks.map(({ kind, youtubeId, description }) => (
+              <Examples.Video
+                key={youtubeId}
                 youtubeId={youtubeId}
                 kind={kind}
                 description={description}
               />
-            </WorkContainer>
-          ))}
+            ))}
+          </Examples>
         </WorksContainer>
         <SeeMoreContainer>
           <SeeMore

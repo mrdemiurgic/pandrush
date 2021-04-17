@@ -21,10 +21,28 @@ const pulse = keyframes`
 `;
 
 export const Container = styled.div`
-  display: inline-block;
+  display: block;
   text-align: left;
-  width: 33.33%;
+  position: relative;
+`;
+
+interface OverlayProps {
+  show: boolean;
+}
+
+export const Overlay = styled.div<OverlayProps>`
+  background: #ff000077;
+  border-radius: 10px;
   padding: 10px;
+  position: absolute;
+  z-index: 1;
+  transition: 0.3s opacity;
+  opacity: ${({ show }) => (show ? 1 : 0)}
+  pointer-events: ${({ show }) => (show ? 'auto' : 'none')}
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 `;
 
 export const Card = styled.div`

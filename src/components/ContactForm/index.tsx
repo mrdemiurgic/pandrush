@@ -12,12 +12,16 @@ import {
   Input,
   TextArea,
   SendIcon,
+  StatusBox,
 } from './styles';
 
 const ContactForm = () => {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
+
+  const [status, setStatus] = useState<string>('');
+  const [showStatus, setShowStatus] = useState<boolean>(false);
 
   const onChangeName = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -33,17 +37,24 @@ const ContactForm = () => {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    sendEmail(name, email, message);
-    // e.target.forEach((i: HTMLInputElement) => {
-    //   console.log(i.value);
-    // });
+    setShowStatus(true);
+    setStatus('Thank you for your message! We will be in touch soon.');
+
+    setTimeout(() => {
+      setShowStatus(false);
+      setName('');
+      setEmail('');
+      setMessage('');
+    }, 5000);
+    // sendEmail(name, email, message);
   };
 
   return (
     <Container>
+      <StatusBox show={showStatus}>{status}</StatusBox>
       <form onSubmit={onSubmit}>
         <InputContainer>
-          <Label>Name</Label>
+          <Label>Your Name</Label>
           <Input
             required
             name="name"
@@ -53,7 +64,7 @@ const ContactForm = () => {
           />
         </InputContainer>
         <InputContainer>
-          <Label>E-mail</Label>
+          <Label>Your E-mail</Label>
           <Input
             required
             name="email"
@@ -71,7 +82,7 @@ const ContactForm = () => {
             onChange={onChangeMessage}
           />
         </InputContainer>
-        <Button type="submit">
+        <Button type="submit" disabled={showStatus}>
           <SendIcon icon={faPaperPlane} />
           Send
         </Button>
