@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Pricing from './index';
+import Book from './index';
 
 import { Story, Meta } from '@storybook/react';
 
 export default {
-  title: 'Sections/Pricing',
-  component: Pricing,
+  title: 'Sections/Book',
+  component: Book,
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
@@ -23,6 +23,6 @@ export default {
   // ],
 } as Meta;
 
-const Template = () => <Pricing />;
+const Template = () => <Book />;
 
 export const Default = Template.bind({});

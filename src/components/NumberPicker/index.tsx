@@ -18,22 +18,32 @@ export interface Props {
    */
   min: number;
   /**
+   * Size of incremental value. Defaults to 1
+   */
+  step?: number;
+  /**
    * Called after incrementing or decrementing. Will be called even if value doesn't change.
    */
   onChange: (newValue: number) => void;
 }
 
-const NumberPicker = ({ initialValue, max, min, onChange }: Props) => {
+const NumberPicker = ({
+  initialValue,
+  max,
+  min,
+  step = 1,
+  onChange,
+}: Props) => {
   const [value, setValue] = useState<number>(initialValue);
 
   const onDecrement = () => {
-    const newValue = Math.max(value - 1, min);
+    const newValue = Math.max(value - step, min);
     setValue(newValue);
     onChange(newValue);
   };
 
   const onIncrement = () => {
-    const newValue = Math.min(value + 1, max);
+    const newValue = Math.min(value + step, max);
     setValue(newValue);
     onChange(newValue);
   };

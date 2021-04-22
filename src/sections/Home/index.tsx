@@ -36,9 +36,9 @@ const Home = () => {
               separatorColor={colors.babyBlue}
             />
           </FadeBox>
-          <SocialMediaContainer>
+          {/* <SocialMediaContainer>
             <SocialMedia />
-          </SocialMediaContainer>
+          </SocialMediaContainer> */}
 
           <CreateOrderContainer>
             <CreateOrder />

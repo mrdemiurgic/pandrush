@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
-import colors from '../../content/colors.json';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import colors from '../../content/colors.json';
 
 interface OptionBoxProps {
   selected?: boolean;
@@ -23,33 +23,18 @@ const pulse = keyframes`
 export const Container = styled.div`
   display: block;
   text-align: left;
-  position: relative;
-`;
-
-interface OverlayProps {
-  show: boolean;
-}
-
-export const Overlay = styled.div<OverlayProps>`
-  background: #ff000077;
-  border-radius: 10px;
+  /* width: 33.3333%; */
+  flex: 1;
+  min-width: 320px;
+  /* flex: 1; */
   padding: 10px;
-  position: absolute;
-  z-index: 1;
-  transition: 0.3s opacity;
-  opacity: ${({ show }) => (show ? 1 : 0)}
-  pointer-events: ${({ show }) => (show ? 'auto' : 'none')}
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  position: relative;
 `;
 
 export const Card = styled.div`
   background: ${colors.babyPowder};
   color: ${colors.richBlack};
   border-radius: 10px;
-  /* width: 300px; */
   padding: 10px;
   transition: 0.3s all;
   box-shadow: 0 2.5px 5px ${colors.richBlack};
@@ -173,11 +158,17 @@ export const OptionName = styled.div<OptionBoxProps>`
   transform: translateY(-50%);
 `;
 
-export const OptionPrice = styled.div`
+interface OptionPriceProps {
+  show: boolean;
+}
+
+export const OptionPrice = styled.div<OptionPriceProps>`
   text-align: right;
   font-size: 1em;
   font-weight: 600;
   color: ${colors.babyBlue5};
+  pointer-events: none;
+  opacity: ${({ show }) => (show ? 1 : 0)};
 `;
 
 export const TotalBox = styled.div`

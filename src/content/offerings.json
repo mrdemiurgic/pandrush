@@ -1,76 +1,109 @@
 {
   "packages": [
     {
-      "name": "Wedding",
-      "price": 2000,
-      "description": "Not a single moment will be missed on your special day!",
-      "features": [
-        "2 Videographers",
-        "8 hours of filming",
-        "5-10 mins of professionally edited video",
-        "1-2 mins of video for social media use"
-      ],
+      "name": "Church Service / Vlogging",
+      "basePrice": 0,
+      "basePriceLabel": "$60/hr",
+      "description": "Spread your brand and message!",
+      "features": ["1 Videographer", "Logo", "Video of entire footage"],
       "options": [
         {
-          "name": "Extra hours",
-          "price": 150,
-          "type": "hourly"
+          "defaultValue": 1,
+          "name": "Hours of filming",
+          "price": 60,
+          "type": "hourly",
+          "showPrice": false
         },
         {
-          "name": "1 Photographer",
+          "defaultValue": 0,
+          "name": "Extra Videographer",
           "price": 500,
-          "type": "once"
-        },
-        {
-          "name": "Drone footage",
-          "price": 200,
-          "type": "once"
+          "type": "once",
+          "showPrice": true
         }
       ]
     },
     {
       "name": "Movie/TV Show",
-      "price": 1500,
+      "basePrice": 599,
+      "basePriceLabel": "$599",
       "description": "We will bring your dream movie to reality!",
       "features": [
         "1 Videographer",
-        "4 hours of filming",
-        "Edited film of agreed upon length",
-        "1-2 mins of trailer"
+        "8 hours of filming",
+        "5-10 min film",
+        "1-2 min video for social media"
       ],
       "options": [
         {
+          "defaultValue": 0,
           "name": "Extra hours",
           "price": 100,
-          "type": "hourly"
+          "type": "hourly",
+          "showPrice": true
         },
         {
+          "defaultValue": 0,
           "name": "Extra Videographer",
           "price": 500,
-          "type": "once"
+          "type": "once",
+          "showPrice": true
+        },
+        {
+          "defaultValue": 0,
+          "name": "Drone footage",
+          "price": 300,
+          "type": "once",
+          "showPrice": true
         }
       ]
     },
     {
-      "name": "General",
-      "price": 1000,
-      "description": "For events, vlogging, tradeshows, etc",
+      "name": "Wedding",
+      "basePrice": 1199,
+      "basePriceLabel": "$1199",
+      "description": "Not a single moment will be missed on your special day!",
       "features": [
         "1 Videographer",
-        "4 hours of filming",
-        "5-10 mins of professionally edited video",
-        "1-2 mins of trailer"
+        "6 hours of filming",
+        "5 mins of highlight video from entire day",
+        "1-2 mins of video for social media use"
       ],
       "options": [
         {
-          "name": "Extra hours",
-          "price": 100,
-          "type": "hourly"
+          "defaultValue": 0,
+          "name": "Extra fliming hours",
+          "price": 200,
+          "type": "hourly",
+          "showPrice": true
         },
         {
-          "name": "Extra Videographer",
+          "defaultValue": 0,
+          "name": "Extra videographer",
           "price": 500,
-          "type": "once"
+          "type": "once",
+          "showPrice": true
+        },
+        {
+          "defaultValue": 0,
+          "name": "1 Photographer",
+          "price": 500,
+          "type": "once",
+          "showPrice": true
+        },
+        {
+          "defaultValue": 0,
+          "name": "Drone footage",
+          "price": 300,
+          "type": "once",
+          "showPrice": true
+        },
+        {
+          "defaultValue": 0,
+          "name": "Highlight video +5 min",
+          "price": 200,
+          "type": "once",
+          "showPrice": true
         }
       ]
     }

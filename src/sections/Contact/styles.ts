@@ -22,7 +22,7 @@ export const Column = styled.div`
   position: relative;
   vertical-align: middle;
   text-align: center;
-  &:first {
+  &:first-child {
     border-left: 0px solid ${colors.richBlack};
   }
 `;

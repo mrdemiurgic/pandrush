@@ -4,7 +4,6 @@ import Examples from './index';
 
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import 'jest-styled-components';
 
 jest.mock('react-youtube', () => ({
   __esModule: true,

@@ -11,7 +11,6 @@ export const Container = styled.div`
     content: '';
     margin-top: -80px;
     height: 80px;
-    /* background: ${colors.richBlack}; */
   }
 `;
 
@@ -32,23 +31,9 @@ export const Banner = styled.div`
 
 export const WorksContainer = styled.div``;
 
-export const WorkContainer = styled.div`
-  width: 50%;
-  padding: 0;
-  margin: 0;
-  vertical-align: middle;
-  display: inline-block;
-  box-sizing: border-box;
-  /* @media only screen and (min-width: 1850px) {
-    width: 33.33333%;
-  } */
-  @media only screen and (max-width: 800px) {
-    width: 100%;
-  }
-`;
-
 export const SeeMoreContainer = styled.div`
   text-align: center;
+  margin-top: 30px;
   margin-bottom: 10px;
 `;
 

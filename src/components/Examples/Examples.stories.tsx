@@ -15,13 +15,6 @@ export default {
       default: 'sonicSilver',
     },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ width: 900 }}>
-        <Story />
-      </div>
-    ),
-  ],
 } as Meta;
 
 const Template = () => (

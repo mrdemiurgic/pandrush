@@ -3,16 +3,13 @@ import React from 'react';
 import {
   Container,
   InnerContainer,
-  Banner,
   WorksContainer,
-  WorkContainer,
   SeeMoreContainer,
   SeeMore,
   YoutubeIcon,
 } from './styles';
 
 import Examples from '../../components/Examples';
-// import Work from '../../components/Work';
 
 import recentWorks from '../../content/recentWorks.json';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';

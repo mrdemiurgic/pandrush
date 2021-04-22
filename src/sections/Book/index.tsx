@@ -14,28 +14,40 @@ import {
   PackageContainer,
 } from './styles';
 
-import { packages, featuresInAll } from '../../content/offerings.json';
+import { Option } from '../../components/Pricing/types';
 
-import Package, { Option } from '../../components/Package';
+import offerings from '../../content/offerings.json';
+
 import { faCar, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
-const Pricing = () => {
+import Pricing from '../../components/Pricing';
+
+const { packages, featuresInAll } = offerings;
+const Book = () => {
   return (
     <Container id="book">
       <InnerContainer>
-        <PackagesContainer>
-          {packages.map(({ name, description, options, features, price }) => (
-            <PackageContainer>
-              <Package
+        <Pricing>
+          {packages.map(
+            ({
+              name,
+              description,
+              options,
+              features,
+              basePrice,
+              basePriceLabel,
+            }) => (
+              <Pricing.Package
                 name={name}
                 description={description}
                 options={options as Option[]}
                 features={features}
-                price={price}
+                basePrice={basePrice}
+                basePriceLabel={basePriceLabel}
               />
-            </PackageContainer>
-          ))}
-        </PackagesContainer>
+            ),
+          )}
+        </Pricing>
         <QuoteInfo>
           <Mileage>
             <FeatureIcon icon={faCar} />
@@ -66,4 +78,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default Book;

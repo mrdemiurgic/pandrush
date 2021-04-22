@@ -21,8 +21,6 @@ test('ContactForm input fields are fillable', () => {
   const nameInput = screen.getByLabelText(/name/i);
   const messageInput = screen.getByLabelText(/message/i);
 
-  screen.getByRole('basdfasdf');
-
   userEvent.type(emailInput, 'hey');
   userEvent.type(nameInput, 'boo');
   userEvent.type(messageInput, 'hoo');

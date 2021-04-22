@@ -4,7 +4,7 @@ import Home from '../sections/Home';
 import About from '../sections/About';
 import Contact from '../sections/Contact';
 import RecentWork from '../sections/RecentWork';
-import Pricing from '../sections/Pricing';
+import Book from '../sections/Book';
 import Layout from '../components/Layout';
 import FixedNav from '../components/FixedNav';
 import Footer from '../components/Footer';
@@ -16,7 +16,7 @@ const Index = () => {
       <Home />
       <About />
       <RecentWork />
-      <Pricing />
+      <Book />
       <Contact />
       <Footer />
     </Layout>

@@ -3,6 +3,7 @@ import YouTube, { Options } from 'react-youtube';
 
 import {
   VideoContainer,
+  VideoInnerContainer,
   YoutubeVideo,
   Thumbnail,
   PlayIcon,
@@ -13,7 +14,6 @@ import {
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 import { getThumbnailUrl } from '../../utils/youtube';
-import { aspectRatio169 } from '../../utils/layout';
 
 const youtubeOpts: Options = {
   playerVars: {
@@ -38,10 +38,6 @@ export interface VideoProps {
    */
   description: string;
   /**
-   * Width of parent element
-   */
-  width?: number;
-  /**
    * Currently selected youtube ID
    */
   selectedId?: string;
@@ -51,74 +47,57 @@ export interface VideoProps {
   select?: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const Video = React.memo(
-  ({
-    kind,
-    youtubeId,
-    description,
-    width = 0,
-    selectedId,
-    select = () => {},
-  }: VideoProps) => {
-    const videoRef = useRef<any>();
-    const show = youtubeId === selectedId;
+const Video = ({
+  kind,
+  youtubeId,
+  description,
+  selectedId,
+  select = () => {},
+}: VideoProps) => {
+  const videoRef = useRef<any>();
+  const show = youtubeId === selectedId;
 
-    const thumbnailWidth = width / 2 - 20;
-    const thumbnailHeight = aspectRatio169(thumbnailWidth);
+  useEffect(() => {
+    if (!show && videoRef.current !== undefined) {
+      videoRef.current.pauseVideo();
+    }
+  }, [show]);
 
-    const opts = {
-      ...youtubeOpts,
-      width: thumbnailWidth.toString(),
-      height: thumbnailHeight.toString(),
-    };
+  const handler = () => {
+    select(youtubeId);
+    if (videoRef.current !== undefined) {
+      videoRef.current.playVideo();
+    }
+  };
 
-    useEffect(() => {
-      if (!show && videoRef.current !== undefined) {
-        videoRef.current.pauseVideo();
-      }
-    }, [show]);
+  const onReady = (e: { target: any }) => {
+    videoRef.current = e.target;
+  };
 
-    const handler = () => {
-      select(youtubeId);
-      if (videoRef.current !== undefined) {
-        videoRef.current.playVideo();
-      }
-    };
-
-    const onReady = (e: { target: any }) => {
-      videoRef.current = e.target;
-    };
-
-    return (
-      <VideoContainer
-        onClick={handler}
-        onKeyPress={handler}
-        tabIndex={0}
-        role="button"
-      >
+  return (
+    <VideoContainer
+      onClick={handler}
+      onKeyPress={handler}
+      tabIndex={0}
+      role="button"
+    >
+      <VideoInnerContainer>
         <YoutubeVideo
           as={YouTube}
-          opts={opts}
+          opts={youtubeOpts}
           onReady={onReady}
           videoId={youtubeId}
           show={show}
-          width={thumbnailWidth}
-          height={thumbnailHeight}
         />
-        <Thumbnail
-          as="img"
-          src={getThumbnailUrl(youtubeId)}
-          width={thumbnailWidth}
-          height={thumbnailHeight}
-        />
-        <Overlay width={thumbnailWidth} height={thumbnailHeight}>
+        <Thumbnail as="img" src={getThumbnailUrl(youtubeId)} />
+        <Overlay>
           <KindText>{kind}</KindText>
           <PlayIcon icon={faPlay} />
           <DescriptionText>{description}</DescriptionText>
         </Overlay>
-      </VideoContainer>
-    );
-  },
-);
+      </VideoInnerContainer>
+    </VideoContainer>
+  );
+};
 
 export default Video;

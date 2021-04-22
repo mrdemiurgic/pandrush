@@ -9,46 +9,52 @@ export const Container = styled.div`
 `;
 
 export const VideoContainer = styled.div`
-  position: relative;
-  box-sizing: border-box;
-  padding: 10px;
   width: 50%;
-  line-height: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
-interface MediaProps {
-  width: number;
-  height: number;
-}
-
-interface VideoProps extends MediaProps {
+export const VideoInnerContainer = styled.div`
+  position: relative;
+  border: 1px solid ${colors.sonicSilver1};
+  box-shadow: 0 3px 3px ${colors.sonicSilver4};
+  border-radius: 5px;
+`;
+interface VideoProps {
   show: boolean;
 }
 
-export const Thumbnail = styled.div<MediaProps>`
-  width: ${({ width }) => width}px;
-  height: ${({ height }) => height}px;
-  /* border: 1px solid yellow; */
+export const Thumbnail = styled.div`
   margin: 0;
   border-radius: 5px;
   display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  box-sizing: border-box;
 `;
 
 export const YoutubeVideo = styled(Thumbnail)<VideoProps>`
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   border: 0;
+  height: 100%;
+  top: 0px;
+  left: 0px;
   transition: 0.3s opacity;
   pointer-events: ${({ show }) => (show ? 'auto' : 'none')};
   opacity: ${({ show }) => (show ? 1 : 0)};
 `;
 
-export const Overlay = styled(Thumbnail)<MediaProps>`
+export const Overlay = styled(Thumbnail)`
   position: absolute;
-  z-index: 1;
-  cursor: pointer;
-  top: 10px;
-  left: 10px;
+  z-index: 2;
+  height: 100%;
+  top: 0px;
+  left: 0px;
   background-color: ${colors.richBlack}88;
   &:hover {
     & > svg {
@@ -69,6 +75,16 @@ export const KindText = styled.div`
   margin: 0;
   padding: 0;
   line-height: 1;
+  @media screen and (max-width: 1000px) {
+    left: 20px;
+    top: 20px;
+    font-size: 2em;
+  }
+  @media screen and (max-width: 975px) {
+    left: 10px;
+    top: 10px;
+    font-size: 1.5em;
+  }
 `;
 
 export const DescriptionText = styled.div`
@@ -80,6 +96,14 @@ export const DescriptionText = styled.div`
   width: 100%;
   bottom: 30px;
   font-size: 1em;
+  @media screen and (max-width: 1000px) {
+    bottom: 20px;
+    font-size: 0.9em;
+  }
+  @media screen and (max-width: 975px) {
+    bottom: 20px;
+    font-size: 0.8em;
+  }
 `;
 
 export const PlayIcon = styled(FontAwesomeIcon)`
