@@ -3,7 +3,7 @@ import Nav from '../Nav';
 
 import { clamp, linearInterpolate, Params } from '../../utils/layout';
 
-import colors from '../../content/colors.json';
+import colors from '../../styles/colors';
 
 import { Container } from './styles';
 

@@ -1,14 +1,21 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
-import colors from '../../content/colors.json';
+import colors from '../../styles/colors';
 
 interface OverlayProps {
   $show: boolean;
 }
 
+export const Body = createGlobalStyle<OverlayProps>`
+  html, body {
+    overflow-y: ${({ $show }) => ($show ? 'hidden' : 'auto')};
+  }
+`;
+
 export const Overlay = styled.div<OverlayProps>`
   background: ${colors.richBlack}77;
   position: absolute;
+  z-index: 100000;
   opacity: ${({ $show }) => ($show ? 1 : 0)};
   pointer-events: ${({ $show }) => ($show ? 'auto' : 'none')};
   transition: 0.3s opacity;
@@ -24,6 +31,8 @@ export const Modal = styled.div`
   left: 50%;
   width: 500px;
   background: ${colors.babyPowder};
+  color: ${colors.richBlack};
+
   padding: 10px;
   border-radius: 10px;
   transform: translate(-50%, -50%);

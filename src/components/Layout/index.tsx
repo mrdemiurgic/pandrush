@@ -1,6 +1,6 @@
 import React from 'react';
 
-import colors from '../../content/colors.json';
+import colors from '../../styles/colors';
 
 import { createGlobalStyle } from 'styled-components';
 
@@ -31,13 +31,6 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     background: ${colors.richBlack};
     color: ${colors.babyPowder};
-  }
-
-  :target:before {
-    content: "";
-    display: block;
-    height: 100px;
-    margin: -100px 0 0;
   }
 `;
 

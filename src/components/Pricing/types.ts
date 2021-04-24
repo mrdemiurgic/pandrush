@@ -5,6 +5,25 @@ export interface PricingProps {
   children: React.ReactNode;
 }
 
+export interface BookingModalProps {
+  /**
+   * Visiblity of this modal
+   */
+  show: boolean;
+  /**
+   * Close self action
+   */
+  close: () => void;
+  /**
+   * Selected package
+   */
+  selectedPackage: Package | undefined;
+  /**
+   * Selected options
+   */
+  selectedOptions: number[];
+}
+
 export interface Option {
   /**
    * Name of option
@@ -63,5 +82,24 @@ export interface PackageProps extends Package {
   /**
    * Create booking action
    */
-  createBooking?: (index: number, selectedOptions: number[]) => void;
+  showBookingForm?: (index: number, selectedOptions: number[]) => void;
+}
+
+export interface BookFormData {
+  /**
+   * Desired date for booking a video project
+   */
+  date: Date;
+  /**
+   * Name of client
+   */
+  name: string;
+  /**
+   * Email of client
+   */
+  email: string;
+  /**
+   * Any additional note/comments
+   */
+  note: string;
 }

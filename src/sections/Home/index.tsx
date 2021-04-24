@@ -17,7 +17,7 @@ import {
   SocialMediaContainer,
 } from './styles';
 
-import colors from '../../content/colors.json';
+import colors from '../../styles/colors';
 
 const Home = () => {
   return (

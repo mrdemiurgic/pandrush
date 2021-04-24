@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 // import { AnchorLink } from 'gatsby-plugin-anchor-links';
-import { Link } from 'gatsby';
-import colors from '../../content/colors.json';
+import colors from '../../styles/colors';
 
 export const Container = styled.div`
   text-align: center;

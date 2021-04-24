@@ -1,8 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
-// import colors from '../../content/colors.json';
-
 export const Container = styled.div`
   padding: 10px;
 `;

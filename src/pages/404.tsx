@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
 
-import colors from '../content/colors.json';
+import colors from '../styles/colors';
 
 const Container = styled.div`
   position: absolute;

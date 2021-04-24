@@ -15,12 +15,3 @@ export const calculateTotal = (
 
   return totalCost;
 };
-
-export const createSelectedOptions = (length: number) => {
-  const newArray = [];
-  for (let i = 0; i < length; i++) {
-    newArray.push(0);
-  }
-
-  return newArray;
-};

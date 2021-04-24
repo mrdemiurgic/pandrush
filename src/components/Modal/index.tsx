@@ -17,11 +17,16 @@ interface Props {
 }
 
 const Modal = ({ children, show }: Props) => {
-  return ReactDOM.createPortal(
-    <S.Overlay $show={show}>
-      <S.Modal>{children}</S.Modal>
-    </S.Overlay>,
-    portalElement,
+  return (
+    (portalElement &&
+      ReactDOM.createPortal(
+        <S.Overlay $show={show}>
+          <S.Body $show={show} />
+          <S.Modal>{children}</S.Modal>
+        </S.Overlay>,
+        portalElement,
+      )) ||
+    null
   );
 };
 

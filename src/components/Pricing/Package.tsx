@@ -16,7 +16,7 @@ import { Option, PackageProps } from './types';
 const Package = ({
   name,
   index = 0,
-  createBooking = () => {},
+  showBookingForm = () => {},
   description,
   basePrice,
   basePriceLabel,
@@ -107,7 +107,7 @@ const Package = ({
         <S.SelectContainer>
           <S.SelectButton
             onClick={() => {
-              createBooking(index, selectedOptions);
+              showBookingForm(index, selectedOptions);
             }}
           >
             <S.CalendarIcon icon={faCalendarAlt} />

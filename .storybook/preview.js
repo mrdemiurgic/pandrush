@@ -2,7 +2,7 @@ import React from 'react';
 import { TypographyStyle, GoogleFont } from 'react-typography';
 import { action } from '@storybook/addon-actions';
 
-import colors from '../src/content/colors.json';
+import colors from '../src/styles/colors';
 
 import typography from '../src/utils/typography';
 

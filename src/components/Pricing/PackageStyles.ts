@@ -1,7 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import colors from '../../content/colors.json';
+import colors from '../../styles/colors';
+import spacing from '../../styles/spacing';
 
 interface OptionBoxProps {
   selected?: boolean;
@@ -27,17 +28,17 @@ export const Container = styled.div`
   flex: 1;
   min-width: 320px;
   /* flex: 1; */
-  padding: 10px;
+  padding: ${spacing.sm}px;
   position: relative;
 `;
 
 export const Card = styled.div`
   background: ${colors.babyPowder};
   color: ${colors.richBlack};
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: ${spacing.sm}px;
+  padding: ${spacing.sm}px;
   transition: 0.3s all;
-  box-shadow: 0 2.5px 5px ${colors.richBlack};
+  box-shadow: 0 ${spacing.xxs}px ${spacing.xs}px ${colors.richBlack};
 `;
 
 export const Banner = styled.div`
@@ -45,7 +46,7 @@ export const Banner = styled.div`
   padding: 0;
   font-weight: 600;
   line-height: 1;
-  margin-bottom: 10px;
+  margin-bottom: ${spacing.med}px;
   font-family: 'Oswald';
 `;
 
@@ -54,18 +55,13 @@ export const Description = styled.div`
   font-weight: 0.8em;
 `;
 
-export const Separator = styled.div`
-  margin: 10px 0;
-  border-bottom: 2px solid ${colors.richBlack}44;
-`;
-
 export const BaseCost = styled.span`
   font-size: 0.3em;
   font-weight: 700;
   text-transform: uppercase;
   display: inline-block;
   color: ${colors.sonicSilver1};
-  margin-right: 2.5px;
+  margin-right: ${spacing.xs}px;
 `;
 
 export const StartingPrice = styled.div`
@@ -73,14 +69,13 @@ export const StartingPrice = styled.div`
   font-size: 1.4em;
   color: ${colors.babyBlue5};
   text-align: right;
-  margin: 10px 0;
+  margin: ${spacing.sm}px 0;
   line-height: 1;
 `;
 
 export const IncludedHours = styled.div`
   font-weight: 200;
   font-size: 0.8em;
-
   line-height: 1;
 `;
 
@@ -91,18 +86,18 @@ export const Check = styled(FontAwesomeIcon)`
 
 export const FeatureList = styled.div`
   padding: 0px;
-  margin-top: 10px;
+  margin-top: ${spacing.med}px;
 `;
 
 export const FeatureItem = styled.div`
-  margin-bottom: 7.5px;
+  margin-bottom: ${spacing.sm}px;
   font-size: 0.8em;
   font-weight: 300;
   line-height: 1;
 `;
 
 export const FeatureContent = styled.div`
-  margin-left: 25px;
+  margin-left: ${spacing.med}px;
 `;
 
 export const NumberPickerContainer = styled.div`

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import colors from '../../content/colors.json';
+import colors from '../../styles/colors';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
