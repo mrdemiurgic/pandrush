@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 
 import * as S from './styles';
 
-const portalElement = document.querySelector('#portal');
-
 interface Props {
   /**
    * Content of Modal
@@ -24,7 +22,7 @@ const Modal = ({ children, show }: Props) => {
           <S.Body $show={show} />
           <S.Modal>{children}</S.Modal>
         </S.Overlay>,
-        portalElement,
+        document.querySelector('#portal'),
       )) ||
     null
   );
