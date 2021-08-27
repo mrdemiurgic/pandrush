@@ -46,7 +46,9 @@ const Nav = ({
       {navItems.map((nav) => (
         <Item
           key={nav.label}
-          // to={nav.link}
+          onClick={() => {
+            console.log('heyyyy!!!!!');
+          }}
           href={`#${nav.hash}`}
           textColor={textColor}
           textHoverColor={textHoverColor}

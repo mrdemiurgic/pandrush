@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #___gatsby, #gatsby-focus-wrapper {
-    height: 100%;
+    /* height: 100%; */
     width: 100%;
     background: ${colors.richBlack};
     color: ${colors.babyPowder};

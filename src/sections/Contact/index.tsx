@@ -4,59 +4,67 @@ import SocialMedia from '../../components/SocialMedia';
 
 import ContactForm from '../../components/ContactForm';
 
-import { faEnvelope, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
-
 import {
-  Container,
-  Banner,
-  Description,
-  InnerContainer,
-  Column,
-  ContactPoints,
-  ContactPoint,
-  ContactIcon,
-  ContactText,
-  ContactLink,
-  ContactIconContainer,
-  ContactFormContainer,
-} from './styles';
+  faEnvelope,
+  faMobileAlt,
+  faPhone,
+} from '@fortawesome/free-solid-svg-icons';
+
+import * as S from './styles';
+
+import { ContactPointProps } from './types';
+
+const contactPoints = [
+  {
+    icon: faEnvelope,
+    label: 'pandrushllc@gmail.com',
+    url: 'mailto:pandrushllc@gmail.com',
+  },
+  {
+    icon: faMobileAlt,
+    label: 'Text: (346) 276-5915',
+    url: 'sms://+13462765915',
+  },
+  {
+    icon: faPhone,
+    label: 'VP/VRS: (281) 241-1689',
+    url: 'tel://+2812411689',
+  },
+];
+
+const ContactPoint = ({ icon, url, label }: ContactPointProps) => {
+  return (
+    <S.ContactPoint>
+      <S.ContactIconContainer>
+        <S.ContactIcon icon={icon} />
+      </S.ContactIconContainer>
+      <S.ContactText>
+        <S.ContactLink href={url}>{label}</S.ContactLink>
+      </S.ContactText>
+    </S.ContactPoint>
+  );
+};
 
 const Contact = () => {
   return (
-    <Container id="contact">
-      <InnerContainer>
-        <Column>
-          <ContactPoints>
-            <ContactPoint>
-              <ContactIconContainer>
-                <ContactIcon icon={faEnvelope} />
-              </ContactIconContainer>
-              <ContactText>
-                <ContactLink href="mailto:pandrushllc@gmail.com">{`pandrushllc@gmail.com`}</ContactLink>
-              </ContactText>
-            </ContactPoint>
-            <ContactPoint>
-              <ContactIconContainer>
-                <ContactIcon icon={faMobileAlt} />
-              </ContactIconContainer>
-
-              <ContactText>
-                <ContactLink href="tel:(123) 456-7890">
-                  (123) 456-7890
-                </ContactLink>
-              </ContactText>
-            </ContactPoint>
-          </ContactPoints>
+    <S.Container id="contact">
+      <S.InnerContainer>
+        <S.Column>
+          <S.ContactPoints>
+            {contactPoints.map(({ icon, label, url }) => (
+              <ContactPoint key={url} icon={icon} label={label} url={url} />
+            ))}
+          </S.ContactPoints>
 
           <SocialMedia includeEmail={false} />
-        </Column>
-        <Column>
-          <ContactFormContainer>
+        </S.Column>
+        <S.Column>
+          <S.ContactFormContainer>
             <ContactForm />
-          </ContactFormContainer>
-        </Column>
-      </InnerContainer>
-    </Container>
+          </S.ContactFormContainer>
+        </S.Column>
+      </S.InnerContainer>
+    </S.Container>
   );
 };
 

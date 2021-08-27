@@ -13,14 +13,15 @@ export const Container = styled.div`
 export const InnerContainer = styled.div`
   margin: auto;
   width: 1200px;
+  display: flex;
+  align-items: center;
 `;
 
 export const Column = styled.div`
-  display: inline-block;
-  width: 50%;
+  flex: 1;
   padding: 10px;
   position: relative;
-  vertical-align: middle;
+  border-left: 1px solid ${colors.richBlack};
   text-align: center;
   &:first-child {
     border-left: 0px solid ${colors.richBlack};

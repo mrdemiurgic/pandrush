@@ -23,7 +23,7 @@ const sendEmail = (
     // Message object
     const newMessage = {
       from: `${name} <${email}>`,
-      to: 'Gabe <gabe@demiurgic.dev',
+      to: 'Gabe <gabe@demiurgic.dev>',
       subject: `${name} - Contact Form`,
       text: message,
       html: `<p>${message}</p>`,

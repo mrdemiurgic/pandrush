@@ -38,6 +38,7 @@ const Book = () => {
               basePriceLabel,
             }) => (
               <Pricing.Package
+                key={name}
                 name={name}
                 description={description}
                 options={options as Option[]}
@@ -66,7 +67,7 @@ const Book = () => {
           </IncludedFeaturesBanner>
           <div>
             {featuresInAll.map((feature) => (
-              <Feature>
+              <Feature key={feature}>
                 <FeatureIcon icon={faCheckCircle} />
                 {feature}
               </Feature>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import * as S from './styles';
@@ -15,17 +15,23 @@ interface Props {
 }
 
 const Modal = ({ children, show }: Props) => {
-  return (
-    (portalElement &&
-      ReactDOM.createPortal(
+  const [portal, setPortal] = useState<HTMLDivElement>();
+
+  useEffect(() => {
+    setPortal(
+      (document.getElementById('portal') as HTMLDivElement) || undefined,
+    );
+  }, []);
+
+  return portal
+    ? ReactDOM.createPortal(
         <S.Overlay $show={show}>
           <S.Body $show={show} />
           <S.Modal>{children}</S.Modal>
         </S.Overlay>,
-        document.querySelector('#portal'),
-      )) ||
-    null
-  );
+        portal,
+      )
+    : null;
 };
 
 export default Modal;

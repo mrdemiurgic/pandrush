@@ -110,14 +110,14 @@ export const NumberPickerContainer = styled.div`
 export const OptionBox = styled.div<OptionBoxProps>`
   border: ${({ type }) => (type === 'hourly' ? 0 : 1)}px solid
     ${({ selected }) =>
-      selected ? colors.babyBlue5 : `${colors.sonicSilver1}dd`};
+      selected ? colors.yellowGreen5 : `${colors.sonicSilver1}dd`};
   margin-bottom: 5px;
   padding: 10px;
   user-select: none;
   position: relative;
   outline: none;
   background: ${({ selected }) =>
-    selected ? colors.babyBlue2 + 'dd' : 'none'};
+    selected ? colors.yellowGreen1 + 'dd' : 'none'};
   border-radius: 5px;
   cursor: ${({ type }) => (type === 'hourly' ? 'inherit' : 'pointer')};
   transition: 0.3s transform, 0.3s background;
@@ -125,7 +125,7 @@ export const OptionBox = styled.div<OptionBoxProps>`
     background: ${({ type, selected }) =>
       type === 'hourly'
         ? 'none'
-        : `${colors.babyBlue2}${selected ? 'dd' : '66'}`};
+        : `${colors.yellowGreen1}${selected ? 'dd' : '66'}`};
   }
   &:last-child {
     margin-bottom: 0;
@@ -133,7 +133,7 @@ export const OptionBox = styled.div<OptionBoxProps>`
 `;
 
 export const OptionIcon = styled(FontAwesomeIcon)`
-  color: ${colors.babyBlue5};
+  color: ${colors.yellowGreen4};
   position: absolute;
   left: 10px;
   top: 50%;

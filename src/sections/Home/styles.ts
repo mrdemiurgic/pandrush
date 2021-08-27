@@ -1,6 +1,9 @@
 import styled, { keyframes } from 'styled-components';
 import colors from '../../styles/colors';
+import spacing from '../../styles/spacing';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const windowHeight = window.innerHeight;
 
 const downwards = keyframes`
 from {
@@ -13,17 +16,16 @@ to {
 `;
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100%;
+  height: ${windowHeight}px;
   position: relative;
 `;
 
 export const FadeBackground = styled.div`
   width: 100%;
-  height: 100%;
+  height: ${windowHeight}px;
   position: absolute;
   z-index: 2;
-  background: ${colors.richBlack}66;
+  background: ${colors.richBlack}33;
 `;
 
 export const Content = styled.div`
@@ -48,6 +50,11 @@ export const PandrushText = styled(Text)`
   font-weight: 900;
   font-family: 'Oswald';
   margin-bottom: 7px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 4em;
+  }
+
   @media only screen and (min-width: 1350px) {
     font-size: 7em;
   }
@@ -59,12 +66,24 @@ export const FilmmakerText = styled(Text)`
   font-weight: 200;
   text-transform: uppercase;
   font-family: 'Montserrat';
+
+  @media only screen and (max-width: 600px) {
+    font-size: 0.9em;
+  }
 `;
 
 export const FadeBox = styled.div`
+  @media only screen and (max-height: 420px) {
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 0 ${spacing.sm}px;
+  }
+
   background: #00000044;
   border-radius: 10px;
-  padding: 10px;
+  padding: ${spacing.sm}px;
   /* backdrop-filter: blur(10px); */
 `;
 

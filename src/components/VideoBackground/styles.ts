@@ -13,12 +13,12 @@ export const Video = styled.video`
   pointer-events: none;
   top: 0;
   left: 0;
-  @media screen and (min-aspect-ratio: 16/9) {
+  @media screen and (min-aspect-ratio: 21/9) {
     top: 50%;
     transform: translate(0, -50%);
     width: 100%;
   }
-  @media screen and (max-aspect-ratio: 16/9) {
+  @media screen and (max-aspect-ratio: 21/9) {
     left: 50%;
     transform: translate(-50%, 0);
     height: 100%;

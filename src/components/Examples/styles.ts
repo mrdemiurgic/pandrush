@@ -19,8 +19,8 @@ export const VideoContainer = styled.div`
 
 export const VideoInnerContainer = styled.div`
   position: relative;
-  border: 1px solid ${colors.sonicSilver1};
-  box-shadow: 0 3px 3px ${colors.sonicSilver4};
+  border: 1px solid ${colors.sonicSilver3}22;
+  box-shadow: 0 2px 4px ${colors.richBlack};
   border-radius: 5px;
 `;
 interface VideoProps {

@@ -2,17 +2,22 @@
   "packages": [
     {
       "name": "Church Service / Vlogging",
-      "basePrice": 0,
-      "basePriceLabel": "$60/hr",
+      "basePrice": 120,
+      "basePriceLabel": "$120",
       "description": "Spread your brand and message!",
-      "features": ["1 Videographer", "Logo", "Video of entire footage"],
+      "features": [
+        "1 Videographer",
+        "Logo",
+        "Video of entire footage",
+        "2 hours of filming"
+      ],
       "options": [
         {
-          "defaultValue": 1,
-          "name": "Hours of filming",
+          "defaultValue": 0,
+          "name": "Extra hours",
           "price": 60,
           "type": "hourly",
-          "showPrice": false
+          "showPrice": true
         },
         {
           "defaultValue": 0,
@@ -24,7 +29,7 @@
       ]
     },
     {
-      "name": "Movie/TV Show",
+      "name": "Filmmaking",
       "basePrice": 599,
       "basePriceLabel": "$599",
       "description": "We will bring your dream movie to reality!",
@@ -111,7 +116,6 @@
   "featuresInAll": [
     "4k high quality footage",
     "Professional editing and effects",
-    "Licensed background music",
     "Raw unedited video footage"
   ]
 }

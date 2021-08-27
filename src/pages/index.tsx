@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { BrowserView } from 'react-device-detect';
 import Home from '../sections/Home';
 import About from '../sections/About';
 import Contact from '../sections/Contact';
@@ -12,7 +13,9 @@ import Footer from '../components/Footer';
 const Index = () => {
   return (
     <Layout>
-      <FixedNav />
+      <BrowserView>
+        <FixedNav />
+      </BrowserView>
       <Home />
       <About />
       <RecentWork />
