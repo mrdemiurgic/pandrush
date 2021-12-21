@@ -11,7 +11,7 @@ from {
 }
 
 to {
-  transform: translate(-50%, 30px);
+  transform: translate(-50%, 25px);
 }
 `;
 
@@ -110,6 +110,11 @@ export const ScrollingIndicator = styled(FontAwesomeIcon)`
   transform: translateX(-50%);
   font-size: 3em;
   z-index: 10;
+
+  @media screen and (max-width: 350px) {
+    font-size: 1.2em;
+    bottom: 40px;
+  }
 `;
 
 export const SocialMediaContainer = styled.div`

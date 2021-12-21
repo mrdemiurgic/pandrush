@@ -1,18 +1,6 @@
 import React from 'react';
 
-import {
-  Container,
-  InnerContainer,
-  PackagesContainer,
-  QuoteInfo,
-  Mileage,
-  WhatWillHappen,
-  IncludedFeatures,
-  IncludedFeaturesBanner,
-  Feature,
-  FeatureIcon,
-  PackageContainer,
-} from './styles';
+import * as S from './styles';
 
 import { Option } from '../../components/Pricing/types';
 
@@ -25,8 +13,8 @@ import Pricing from '../../components/Pricing';
 const { packages, featuresInAll } = offerings;
 const Book = () => {
   return (
-    <Container id="book">
-      <InnerContainer>
+    <S.Container id="book">
+      <S.InnerContainer>
         <Pricing>
           {packages.map(
             ({
@@ -49,33 +37,33 @@ const Book = () => {
             ),
           )}
         </Pricing>
-        <QuoteInfo>
-          <Mileage>
-            <FeatureIcon icon={faCar} />
+        <S.QuoteInfo>
+          <S.Mileage>
+            <S.FeatureIcon icon={faCar} />
             Mileage will also apply if the project is outside of the DFW
             metroplex (Dallas - Fort Worth, TX).
-          </Mileage>
-          <WhatWillHappen>
+          </S.Mileage>
+          <S.WhatWillHappen>
             Given quotes are estimates, subject to adjustments as necessary to
             complete your project. You will be invoiced upon completion of
             project to your satisfaction.
-          </WhatWillHappen>
-        </QuoteInfo>
-        <IncludedFeatures>
-          <IncludedFeaturesBanner>
+          </S.WhatWillHappen>
+        </S.QuoteInfo>
+        <S.IncludedFeatures>
+          <S.IncludedFeaturesBanner>
             Included in all packages:
-          </IncludedFeaturesBanner>
+          </S.IncludedFeaturesBanner>
           <div>
             {featuresInAll.map((feature) => (
-              <Feature key={feature}>
-                <FeatureIcon icon={faCheckCircle} />
+              <S.Feature key={feature}>
+                <S.FeatureIcon icon={faCheckCircle} />
                 {feature}
-              </Feature>
+              </S.Feature>
             ))}
           </div>
-        </IncludedFeatures>
-      </InnerContainer>
-    </Container>
+        </S.IncludedFeatures>
+      </S.InnerContainer>
+    </S.Container>
   );
 };
 

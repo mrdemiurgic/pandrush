@@ -14,7 +14,7 @@ export const Body = createGlobalStyle<OverlayProps>`
 
 export const Overlay = styled.div<OverlayProps>`
   background: ${colors.richBlack}77;
-  position: absolute;
+  position: fixed;
   z-index: 100000;
   opacity: ${({ $show }) => ($show ? 1 : 0)};
   pointer-events: ${({ $show }) => ($show ? 'auto' : 'none')};
@@ -32,7 +32,6 @@ export const Modal = styled.div`
   width: 500px;
   background: ${colors.babyPowder};
   color: ${colors.richBlack};
-
   padding: 10px;
   border-radius: 10px;
   transform: translate(-50%, -50%);

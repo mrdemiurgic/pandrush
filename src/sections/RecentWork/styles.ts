@@ -17,6 +17,9 @@ export const Container = styled.div`
 export const InnerContainer = styled.div`
   margin: auto;
   width: 1200px;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 export const Banner = styled.div`

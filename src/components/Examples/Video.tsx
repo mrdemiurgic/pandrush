@@ -1,16 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import YouTube, { Options } from 'react-youtube';
 
-import {
-  VideoContainer,
-  VideoInnerContainer,
-  YoutubeVideo,
-  Thumbnail,
-  PlayIcon,
-  Overlay,
-  KindText,
-  DescriptionText,
-} from './styles';
+import * as S from './styles';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 import { getThumbnailUrl } from '../../utils/youtube';
@@ -75,28 +66,28 @@ const Video = ({
   };
 
   return (
-    <VideoContainer
+    <S.VideoContainer
       onClick={handler}
       onKeyPress={handler}
       tabIndex={0}
       role="button"
     >
-      <VideoInnerContainer>
-        <YoutubeVideo
+      <S.VideoInnerContainer>
+        <S.YoutubeVideo
           as={YouTube}
           opts={youtubeOpts}
           onReady={onReady}
           videoId={youtubeId}
           show={show}
         />
-        <Thumbnail as="img" src={getThumbnailUrl(youtubeId)} />
-        <Overlay>
-          <KindText>{kind}</KindText>
-          <PlayIcon icon={faPlay} />
-          <DescriptionText>{description}</DescriptionText>
-        </Overlay>
-      </VideoInnerContainer>
-    </VideoContainer>
+        <S.Thumbnail as="img" src={getThumbnailUrl(youtubeId)} />
+        <S.Overlay>
+          <S.KindText>{kind}</S.KindText>
+          <S.PlayIcon icon={faPlay} />
+          <S.DescriptionText>{description}</S.DescriptionText>
+        </S.Overlay>
+      </S.VideoInnerContainer>
+    </S.VideoContainer>
   );
 };
 

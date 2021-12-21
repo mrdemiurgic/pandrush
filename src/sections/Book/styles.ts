@@ -19,6 +19,9 @@ export const Container = styled.div`
 export const InnerContainer = styled.div`
   width: 1200px;
   margin: auto;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 export const Banner = styled.div`
@@ -41,6 +44,9 @@ export const QuoteInfo = styled.div`
   line-height: 1.2;
   padding: 10px;
   margin: 10px 0;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const Mileage = styled.div`
@@ -60,11 +66,12 @@ export const IncludedFeatures = styled.div`
   display: inline-block;
   vertical-align: top;
   border-left: 1px solid ${colors.babyPowder};
-
   padding: 10px;
   margin: 10px 0;
-
   width: 50%;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const IncludedFeaturesBanner = styled.div`

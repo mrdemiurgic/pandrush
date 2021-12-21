@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect } from 'react';
 
 import * as S from './styles';
 
@@ -12,26 +11,42 @@ interface Props {
    * Visibility of modal
    */
   show: boolean;
+  /**
+   * Function for hiding self
+   */
+  hide: () => void;
 }
 
-const Modal = ({ children, show }: Props) => {
-  const [portal, setPortal] = useState<HTMLDivElement>();
-
+const Modal = ({ children, show, hide }: Props) => {
   useEffect(() => {
-    setPortal(
-      (document.getElementById('portal') as HTMLDivElement) || undefined,
-    );
-  }, []);
+    if (show) {
+      const escHandler = (event: KeyboardEvent): void => {
+        if (event.keyCode === 27) {
+          hide();
+        }
+      };
+      document.addEventListener('keydown', escHandler);
 
-  return portal
-    ? ReactDOM.createPortal(
-        <S.Overlay $show={show}>
-          <S.Body $show={show} />
-          <S.Modal>{children}</S.Modal>
-        </S.Overlay>,
-        portal,
-      )
-    : null;
+      return (): void => {
+        document.removeEventListener('keydown', escHandler);
+      };
+    }
+    return undefined;
+  }, [hide, show]);
+
+  return (
+    <S.Overlay
+      $show={show}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) {
+          hide();
+        }
+      }}
+    >
+      <S.Body $show={show} />
+      <S.Modal>{children}</S.Modal>
+    </S.Overlay>
+  );
 };
 
 export default Modal;

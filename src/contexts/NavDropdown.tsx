@@ -5,7 +5,9 @@ interface NavDropdown {
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavDropdownContext = React.createContext<NavDropdown | undefined>();
+const NavDropdownContext = React.createContext<NavDropdown | undefined>(
+  undefined,
+);
 
 export const useNavDropdown = () => {
   const val = useContext(NavDropdownContext);

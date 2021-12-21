@@ -35,7 +35,7 @@ const BookingModal = ({
   };
 
   return (
-    <Modal show={show}>
+    <Modal show={show} hide={cancel}>
       <S.Banner>Your selected package:</S.Banner>
       <S.SelectedPackage>
         <S.PackageName>{name}</S.PackageName>

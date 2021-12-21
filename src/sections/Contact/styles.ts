@@ -15,6 +15,10 @@ export const InnerContainer = styled.div`
   width: 1200px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 export const Column = styled.div`
@@ -24,7 +28,11 @@ export const Column = styled.div`
   border-left: 1px solid ${colors.richBlack};
   text-align: center;
   &:first-child {
-    border-left: 0px solid ${colors.richBlack};
+    border-left: 0 solid ${colors.richBlack};
+  }
+  @media screen and (max-width: 700px) {
+    flex-basis: 100%;
+    border-left: 0;
   }
 `;
 
@@ -83,4 +91,11 @@ export const ContactText = styled.div`
   font-weight: 500;
   padding-left: 20px;
   vertical-align: middle;
+  @media screen and (max-width: 720px) {
+    font-size: 1em;
+  }
+
+  @media screen and (max-width: 340px) {
+    font-size: 0.9em;
+  }
 `;

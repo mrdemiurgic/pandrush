@@ -10,6 +10,7 @@ export const Container = styled.div`
   color: ${colors.babyPowder};
   padding: 50px 0;
   font-family: Montserrat;
+
   &:before {
     display: block;
     content: '';
@@ -39,7 +40,7 @@ export const SelfieContainer = styled.div`
   margin: auto;
 
   @media screen and (max-width: 500px) {
-    margin: ${spacing.sm}px;
+    margin: ${spacing.lrg}px;
     height: auto;
     width: auto;
   }
@@ -49,6 +50,9 @@ export const NameContainer = styled.div`
   display: inline-block;
   text-align: center;
   margin-bottom: 10px;
+  @media screen and (max-width: 500px) {
+    font-size: 0.8em;
+  }
 `;
 
 export const Name = styled.div`
@@ -92,7 +96,7 @@ export const Slash = styled.span`
 export const Who = styled.div`
   /* padding: 20px 30px 0 0; */
   line-height: 1.33;
-  font-weight: 0.9em;
+  font-size: 0.9em;
 `;
 
 export const HowBanner = styled.div`

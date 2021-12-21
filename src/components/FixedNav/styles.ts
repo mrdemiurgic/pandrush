@@ -18,11 +18,24 @@ export const Container = styled.div`
   align-items: flex-end;
 `;
 
+const logoHeight = 50;
+
+export const Logo = styled.img`
+  position: absolute;
+  top: 50%;
+  left: ${spacing.med}px;
+  z-index: 100;
+  margin-top: -${logoHeight / 2}px;
+  height: ${logoHeight}px;
+  width: auto;
+`;
+
 export const InnerContainer = styled.div`
   display: flex;
   flex: 1;
   height: ${spacing.xl}px;
   width: 100%;
+  position: relative;
   align-items: center;
 `;
 

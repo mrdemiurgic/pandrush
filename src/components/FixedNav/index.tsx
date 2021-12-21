@@ -3,32 +3,23 @@ import Nav from '../Nav';
 
 import { clamp, linearInterpolate, Params } from '../../utils/layout';
 
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
+import logo from '../../images/pandrush.svg';
 
 import colors from '../../styles/colors';
 import spacing from '../../styles/spacing';
 
 import * as S from './styles';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 const FixedNav = () => {
-  const windowHeight = useRef<number>();
   const fixedNavRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    windowHeight.current = window.innerHeight;
-    const resizeHandler = () => {
-      windowHeight.current = window.innerHeight;
-    };
-
-    window.addEventListener('resize', resizeHandler);
-
-    return () => {
-      window.removeEventListener('resize', resizeHandler);
-    };
-  }, []);
+  const { width, height } = useWindowDimensions();
 
   useLayoutEffect(() => {
-    const scrollHandler = (e: Event) => {
+    const scrollHandler = () => {
       let raf: number | undefined;
 
       if (raf !== undefined) {
@@ -36,16 +27,9 @@ const FixedNav = () => {
       }
 
       raf = window.requestAnimationFrame(() => {
-        if (
-          windowHeight.current !== undefined &&
-          fixedNavRef.current !== null
-        ) {
+        if (height > 0 && fixedNavRef.current !== null) {
           const scrollY = window.scrollY;
-          const newY = clamp(
-            scrollY - windowHeight.current + spacing.xxl,
-            0,
-            spacing.xl,
-          );
+          const newY = clamp(scrollY - height + spacing.xxl, 0, spacing.xl);
           const newOpacity = linearInterpolate(newY, {
             inputRange: [0, spacing.xl],
             outputRange: [0, 1],
@@ -56,17 +40,26 @@ const FixedNav = () => {
       });
     };
 
-    window.addEventListener('scroll', scrollHandler);
+    if (width > 600) {
+      console.log('heyyy');
+      window.addEventListener('scroll', scrollHandler);
+      scrollHandler();
+    } else {
+      if (fixedNavRef.current !== null) {
+        fixedNavRef.current.style.transform = `translateY(0px)`;
+        fixedNavRef.current.style.opacity = '0';
+      }
+    }
 
     return () => {
       window.removeEventListener('scroll', scrollHandler);
     };
-  }, []);
+  }, [height, width]);
 
   return (
     <S.Container ref={fixedNavRef}>
       <S.InnerContainer>
-        <div>Logo</div>
+        <S.Logo src={logo} />
         <S.NavContainer>
           <Nav
             includeHome={true}
