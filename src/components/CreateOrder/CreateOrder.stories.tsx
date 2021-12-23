@@ -2,8 +2,6 @@ import React from 'react';
 
 import CreateOrder from './index';
 
-const sum = (b: string, c: number) => b + c;
-
 export default {
   title: 'Components/CreateOrder',
   component: CreateOrder,
@@ -12,6 +10,6 @@ export default {
   },
 };
 
-const Template = (args) => <CreateOrder {...args} />;
+const Template = (args: any) => <CreateOrder {...args} />;
 
 export const Default = Template.bind({});

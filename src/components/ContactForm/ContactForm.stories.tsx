@@ -20,6 +20,6 @@ export default {
   ],
 } as Meta;
 
-const Template = (args) => <ContactForm {...args} />;
+const Template = (args: any) => <ContactForm {...args} />;
 
 export const Default = Template.bind({});

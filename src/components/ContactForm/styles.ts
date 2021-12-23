@@ -9,17 +9,20 @@ export const Container = styled.div`
 
 interface StatusBoxProps {
   show: boolean;
+  type: 'success' | 'error';
 }
 
 export const StatusBox = styled.div<StatusBoxProps>`
   position: absolute;
-  z-index: 100;
+  z-index: 10000000000;
   left: 50%;
   top: 50%;
   transition: 0.6s all;
   transform: translate(-50%, -50%) scale(${({ show }) => (show ? 1 : 0.25)});
   opacity: ${({ show }) => (show ? 1 : 0)};
-  background: ${colors.babyBlue2};
+  background: ${({ type }) =>
+    (type === 'success' && colors.babyBlue2) ||
+    (type === 'error' && colors.youtubeRed1)};
   line-height: 1.25;
   font-weight: 600;
   padding: 10px;
@@ -34,9 +37,8 @@ export const InputContainer = styled.label`
 
 export const Label = styled.div`
   display: block;
-  font-weight: 500;
   padding: 5px 0;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.9em;
 `;
 
@@ -76,6 +78,10 @@ export const Button = styled.button`
   &:active {
     background: ${colors.babyBlue3};
   }
+`;
+
+export const Spinner = styled.div`
+  padding-bottom: -10px;
 `;
 
 export const SendIcon = styled(FontAwesomeIcon)`

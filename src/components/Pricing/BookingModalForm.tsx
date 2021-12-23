@@ -7,7 +7,11 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import * as S from './BookingModalFormStyles';
 
-const BookingModalForm = () => {
+interface Props {
+  formRef: null | React.RefObject<HTMLFormElement>;
+}
+
+const BookingModalForm = ({ formRef }: Props) => {
   const { state, dispatch } = useBookingData();
 
   const { date, name, email, note } = state;
@@ -29,7 +33,7 @@ const BookingModalForm = () => {
   };
 
   return (
-    <S.Form>
+    <S.Form ref={formRef}>
       <S.TextInputContainer>
         <S.Label>Date</S.Label>
         <S.Input as={DatePicker} selected={date} onChange={onDateChange} />

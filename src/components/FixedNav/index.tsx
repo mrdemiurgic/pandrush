@@ -41,7 +41,6 @@ const FixedNav = () => {
     };
 
     if (width > 600) {
-      console.log('heyyy');
       window.addEventListener('scroll', scrollHandler);
       scrollHandler();
     } else {

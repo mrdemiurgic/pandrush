@@ -3,7 +3,9 @@ import colors from '../../styles/colors';
 import spacing from '../../styles/spacing';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const windowHeight = window.innerHeight;
+interface Props {
+  height: number;
+}
 
 const downwards = keyframes`
 from {
@@ -15,14 +17,14 @@ to {
 }
 `;
 
-export const Container = styled.div`
-  height: ${windowHeight}px;
+export const Container = styled.div<Props>`
+  height: ${({ height }) => height}px;
   position: relative;
 `;
 
-export const FadeBackground = styled.div`
+export const FadeBackground = styled.div<Props>`
   width: 100%;
-  height: ${windowHeight}px;
+  height: ${({ height }) => height}px;
   position: absolute;
   z-index: 2;
   background: ${colors.richBlack}33;

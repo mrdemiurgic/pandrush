@@ -86,3 +86,31 @@ export const ButtonBar = styled.div`
 export const Message = styled.div`
   margin: 0 ${spacing.xs}px ${spacing.sm}px ${spacing.xs}px;
 `;
+
+interface StatusBoxProps {
+  show: boolean;
+  type: 'success' | 'error';
+}
+
+export const StatusBox = styled.div<StatusBoxProps>`
+  position: absolute;
+  z-index: 100000000000;
+  left: 50%;
+  top: 50%;
+  pointer-events: none;
+  transition: 0.6s all;
+  transform: translate(-50%, -50%) scale(${({ show }) => (show ? 1 : 0.25)});
+  opacity: ${({ show }) => (show ? 1 : 0)};
+  background: ${({ type }) =>
+    (type === 'success' && colors.babyBlue2) ||
+    (type === 'error' && colors.youtubeRed1)};
+  line-height: 1.25;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px ${colors.richBlack}66;
+`;
+
+export const Spinner = styled.div`
+  padding-bottom: -10px;
+`;

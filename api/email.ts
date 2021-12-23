@@ -1,24 +1,23 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 
-import sendEmail from '../src/utils/backEmail';
+import mailjet from '../src/utils/mailjet';
 
 const email = async (request: VercelRequest, response: VercelResponse) => {
   if (
     request.body === undefined ||
-    request.body.email === undefined ||
-    request.body.name === undefined ||
-    request.body.message === undefined
+    request.body.subject === undefined ||
+    request.body.body === undefined
   ) {
     return response
-      .status(400)
-      .send('Bad request. One of the fields is missing: email, name, message');
+      .status(401)
+      .send('401 Bad request. One of the fields is missing: subject, body');
   }
 
-  const { email, name, message } = request.body;
+  const { subject, body } = request.body;
 
-  console.log(email);
-  const result = await sendEmail(name, email, message);
-  response.status(200).send(result);
+  const result = await mailjet(subject, body);
+
+  return response.status(result).send(result);
 };
 
 export default email;

@@ -2,7 +2,6 @@ import React from 'react';
 import Nav from '../../components/Nav';
 import VideoBackground from '../../components/VideoBackground';
 import CreateOrder from '../../components/CreateOrder';
-import SocialMedia from '../../components/SocialMedia';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import {
   Container,
@@ -14,16 +13,19 @@ import {
   FadeBackground,
   CreateOrderContainer,
   ScrollingIndicator,
-  SocialMediaContainer,
 } from './styles';
 
 import colors from '../../styles/colors';
 
 const Home = () => {
+  const windowHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
+
+  console.log(windowHeight);
+
   return (
-    <Container id="home">
+    <Container height={windowHeight} id="home">
       <VideoBackground />
-      <FadeBackground>
+      <FadeBackground height={windowHeight}>
         <Content>
           <PandrushText>Pandrush</PandrushText>
           <FilmmakerText>
@@ -36,10 +38,6 @@ const Home = () => {
               separatorColor={colors.babyBlue}
             />
           </FadeBox>
-          {/* <SocialMediaContainer>
-            <SocialMedia />
-          </SocialMediaContainer> */}
-
           <CreateOrderContainer>
             <CreateOrder />
           </CreateOrderContainer>
