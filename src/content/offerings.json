@@ -2,8 +2,8 @@
   "packages": [
     {
       "name": "Church Service / Vlogging",
-      "basePrice": 120,
-      "basePriceLabel": "$120",
+      "basePrice": 180,
+      "basePriceLabel": "$180",
       "description": "Spread your brand and message!",
       "features": [
         "1 Videographer",
@@ -30,8 +30,8 @@
     },
     {
       "name": "Filmmaking",
-      "basePrice": 599,
-      "basePriceLabel": "$599",
+      "basePrice": 699,
+      "basePriceLabel": "$699",
       "description": "We will bring your dream movie to reality!",
       "features": [
         "1 Videographer",
@@ -65,8 +65,8 @@
     },
     {
       "name": "Wedding",
-      "basePrice": 1199,
-      "basePriceLabel": "$1199",
+      "basePrice": 1299,
+      "basePriceLabel": "$1299",
       "description": "Not a single moment will be missed on your special day!",
       "features": [
         "1 Videographer",
@@ -77,7 +77,7 @@
       "options": [
         {
           "defaultValue": 0,
-          "name": "Extra fliming hours",
+          "name": "Extra filming hours",
           "price": 200,
           "type": "hourly",
           "showPrice": true
