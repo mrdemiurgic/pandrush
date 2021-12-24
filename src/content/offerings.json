@@ -21,8 +21,6 @@
         },
         {
           "defaultValue": 0,
-          "name": "Extra Videographer",
-          "price": 500,
           "type": "once",
           "showPrice": true
         }
