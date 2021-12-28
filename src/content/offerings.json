@@ -58,11 +58,11 @@
     },
     {
       "name": "Wedding",
-      "basePrice": 1299,
-      "basePriceLabel": "$1299",
+      "basePrice": 1399,
+      "basePriceLabel": "$1399",
       "description": "Not a single moment will be missed on your special day!",
       "features": [
-        "1 Videographer",
+        "2 Videographer",
         "6 hours of filming",
         "5 mins of highlight video from entire day",
         "1-2 mins of video for social media use"
@@ -77,29 +77,8 @@
         },
         {
           "defaultValue": 0,
-          "name": "Extra videographer",
-          "price": 500,
-          "type": "once",
-          "showPrice": true
-        },
-        {
-          "defaultValue": 0,
-          "name": "1 Photographer",
-          "price": 500,
-          "type": "once",
-          "showPrice": true
-        },
-        {
-          "defaultValue": 0,
           "name": "Drone footage",
           "price": 300,
-          "type": "once",
-          "showPrice": true
-        },
-        {
-          "defaultValue": 0,
-          "name": "Highlight video +5 min",
-          "price": 200,
           "type": "once",
           "showPrice": true
         }
