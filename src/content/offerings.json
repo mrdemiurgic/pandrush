@@ -1,9 +1,9 @@
 {
   "packages": [
     {
-      "name": "Church Service / Vlogging",
-      "basePrice": 180,
-      "basePriceLabel": "$180",
+      "name": "Church Service / Event",
+      "basePrice": 120,
+      "basePriceLabel": "$120",
       "description": "Spread your brand and message!",
       "features": [
         "1 Videographer",
@@ -15,7 +15,7 @@
         {
           "defaultValue": 0,
           "name": "Extra hours",
-          "price": 60,
+          "price": 80,
           "type": "hourly",
           "showPrice": true
         }
