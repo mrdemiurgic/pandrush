@@ -2,8 +2,8 @@
   "packages": [
     {
       "name": "Church Service / Event",
-      "basePrice": 120,
-      "basePriceLabel": "$120",
+      "basePrice": 299,
+      "basePriceLabel": "$299",
       "description": "Spread your brand and message!",
       "features": [
         "1 Videographer",
@@ -15,7 +15,7 @@
         {
           "defaultValue": 0,
           "name": "Extra hours",
-          "price": 80,
+          "price": 100,
           "type": "hourly",
           "showPrice": true
         }
@@ -23,8 +23,8 @@
     },
     {
       "name": "Filmmaking/Promotion",
-      "basePrice": 699,
-      "basePriceLabel": "$699",
+      "basePrice": 799,
+      "basePriceLabel": "$899",
       "description": "We will bring your dream movie/promotion to reality!",
       "features": [
         "1 Videographer",
@@ -57,20 +57,20 @@
     },
     {
       "name": "Wedding",
-      "basePrice": 1499,
-      "basePriceLabel": "$1399",
+      "basePrice": 1599,
+      "basePriceLabel": "$1599",
       "description": "Not a single moment will be missed on your special day!",
       "features": [
         "2 Videographer",
         "6 hours of filming",
-        "5-10 mins of highlight video from entire day",
+        "5-15 mins of highlight video from entire day",
         "1-2 mins of video for social media use"
       ],
       "options": [
         {
           "defaultValue": 0,
           "name": "Extra filming hours",
-          "price": 200,
+          "price": 300,
           "type": "hourly",
           "showPrice": true
         }
